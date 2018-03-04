@@ -3,16 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/back"
     android:layout_height="match_parent"
-    tools:context="com.Alatheer.m.schooles.Avtivities.NewsActivity">
-
-<android.support.v7.widget.RecyclerView
-    android:id="@+id/recyc"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-</android.support.v7.widget.RecyclerView>
-
+    tools:context="com.Alatheer.m.schooles.Avtivities.HonorBoardStudent">
 
 </android.support.constraint.ConstraintLayout>

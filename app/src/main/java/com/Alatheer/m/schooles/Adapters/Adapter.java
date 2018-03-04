@@ -47,8 +47,8 @@ News_Model Model;
         Model=atmArray.get(position);
         holder.linearLayout.setTag(position);
 
-        holder.bank.setText(Model.getTitle());
-        holder.street.setText(Model.getDesc());
+        holder.title.setText(Model.getnews_title());
+        holder.desc.setText(Model.getnews_content());
 
     }
 
@@ -58,15 +58,15 @@ News_Model Model;
     }
 
     class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView bank, street;
+        TextView title, desc;
         ImageView logo;
         LinearLayout linearLayout;
 
         public Holder(View itemView) {
             super(itemView);
 
-            bank=itemView.findViewById(R.id.title);
-            street=itemView.findViewById(R.id.desc);
+            title=itemView.findViewById(R.id.title);
+            desc=itemView.findViewById(R.id.desc);
             logo=itemView.findViewById(R.id.img);
 
             linearLayout=itemView.findViewById(R.id.linnn);
