@@ -16,7 +16,7 @@
         tools:replace="android:supportsRtl">
         <activity
             android:name=".Avtivities.Splash"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Avtivities.NewsActivity" />
         <activity android:name=".Avtivities.DescActivity" />
         <activity android:name=".Avtivities.SafofActivity" />
@@ -30,7 +30,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Avtivities.Home" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity
+            android:name=".Avtivities.Home"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".Avtivities.HonorBoardStudent"></activity>
     </application>
 
 </manifest>
