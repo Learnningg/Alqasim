@@ -1,6 +1,7 @@
 package com.Alatheer.m.schooles.Services;
 
 import com.Alatheer.m.schooles.Models.AllSchoolModel;
+import com.Alatheer.m.schooles.Models.News_Model;
 
 import java.util.List;
 
@@ -19,5 +20,6 @@ public interface Service {
 
     ///////////////////////////////---------news Schools---------//////////////////
 
-
+    @GET("Api/AllNews/1")
+    Call<List<News_Model>> getNewsData();
 }

@@ -5,44 +5,44 @@ package com.Alatheer.m.schooles.Models;
  */
 
 public class News_Model {
-    String title;
-    String desc;
-    String Img;
+    String news_title;
+    String news_content;
+    String image_name;
 
-    public String getImg() {
-        return Img;
+    public String getimage_name() {
+        return image_name;
     }
 
-    public News_Model(String title) {
-        this.title = title;
+    public News_Model(String news_title) {
+        this.news_title = news_title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setnews_title(String news_title) {
+        this.news_title = news_title;
     }
 
 
-    public void setImg(String img) {
-        Img = img;
+    public void setimage_name(String image_name) {
+        image_name = image_name;
     }
 
-    public News_Model(String title, String desc) {
-        this.title = title;
-        this.desc = desc;
+    public News_Model(String news_title, String news_content) {
+        this.news_title = news_title;
+        this.news_content = news_content;
     }
 
-    public String getTitle() {
+    public String getnews_title() {
 
-        return title;
+        return news_title;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setnews_content(String news_content) {
+        this.news_content = news_content;
     }
 
-    public String getDesc() {
+    public String getnews_content() {
 
-        return desc;
+        return news_content;
     }
 
 
