@@ -27,6 +27,7 @@ public class SafofActivity extends AppCompatActivity {
         {
             if (intent.hasExtra("School_Stages1"))
             {
+                school_stages1 = (School_Stages1) intent.getSerializableExtra("School_Stages1");
 
             }
         }
