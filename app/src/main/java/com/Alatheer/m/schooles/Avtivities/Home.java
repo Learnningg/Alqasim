@@ -14,13 +14,21 @@ import java.util.Locale;
 
 public class Home extends AppCompatActivity  implements CircleLayout.OnItemClickListener, CircleLayout.OnRotationFinishedListener{
 
+    protected CircleLayout circleLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-
+        initiatview();
     }
+
+    private void initiatview() {
+
+        circleLayout =  findViewById(R.id.circle);
+        circleLayout.setOnItemClickListener(this);
+    }
+
     @Override
     public void onItemClick(View view) {
 
