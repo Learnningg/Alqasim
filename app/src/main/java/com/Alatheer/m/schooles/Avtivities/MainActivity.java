@@ -13,8 +13,7 @@ Button sfof,news;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-        sfof=findViewById(R.id.sfof);
+        setContentView(R.layout.activity_main);
         news=findViewById(R.id.news);
 
         sfof.setOnClickListener(new View.OnClickListener() {

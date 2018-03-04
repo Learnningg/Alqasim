@@ -16,7 +16,13 @@
         tools:replace="android:supportsRtl">
         <activity
             android:name=".Avtivities.Splash"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Avtivities.NewsActivity" />
         <activity android:name=".Avtivities.DescActivity" />
         <activity android:name=".Avtivities.SafofActivity" />
@@ -24,13 +30,12 @@
         <activity android:name=".Avtivities.AllSchools" />
         <activity android:name=".Avtivities.Chooser_Activity" />
         <activity android:name=".Avtivities.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".Avtivities.Home" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity
+            android:name=".Avtivities.Home"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".Avtivities.Activities"></activity>
     </application>
 
 </manifest>

@@ -2,14 +2,12 @@ package com.Alatheer.m.schooles.Avtivities;
 
 import android.content.Intent;
 import android.graphics.PorterDuff;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -89,7 +87,10 @@ public class AllSchools extends AppCompatActivity implements ViewData {
 
     public void setPos(int pos)
     {
-        Intent intent = new Intent(this,Chooser_Activity.class);
+        String school_id = allSchoolModelList.get(pos).getId();
+        //Intent intent = new Intent(this,Chooser_Activity.class);
+        Intent intent = new Intent(this,LoginActivity.class);
+        intent.putExtra("school_id",school_id);
         startActivity(intent);
     }
 

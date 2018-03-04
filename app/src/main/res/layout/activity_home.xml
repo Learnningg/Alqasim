@@ -23,7 +23,7 @@
 
         <com.szugyi.circlemenu.view.CircleImageView
             style="@style/icon"
-            android:id="@+id/apsent"
+            android:id="@+id/absent"
             android:src="@drawable/icon10"
             />
 
