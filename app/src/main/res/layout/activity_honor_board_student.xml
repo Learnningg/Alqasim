@@ -5,5 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.Alatheer.m.schooles.Avtivities.HonorBoardStudent">
+    <android.support.v7.widget.RecyclerView
 
+        android:id="@+id/rec_honor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back"
+        >
+
+    </android.support.v7.widget.RecyclerView>
 </android.support.constraint.ConstraintLayout>
