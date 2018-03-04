@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Mdares.iml" filepath="$PROJECT_DIR$/.idea/Mdares.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/mdares.iml" filepath="$PROJECT_DIR$/.idea/mdares.iml" />
       <module fileurl="file://E:\android\projects\mdares\mdares.iml" filepath="E:\android\projects\mdares\mdares.iml" />
     </modules>
   </component>
