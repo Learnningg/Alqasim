@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/back"
-    tools:context="com.example.m.schooles.SafofActivity">
+    tools:context="com.Alatheer.m.schooles.Avtivities.SafofActivity">
 
     <LinearLayout
         android:layout_marginTop="20dp"

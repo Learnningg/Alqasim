@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.m.schooles">
+    package="com.Alatheer.m.schooles">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,18 +15,22 @@
         android:theme="@style/AppTheme"
         tools:replace="android:supportsRtl">
         <activity
-            android:name=".Splash"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:name=".Avtivities.Splash"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".Avtivities.NewsActivity" />
+        <activity android:name=".Avtivities.DescActivity" />
+        <activity android:name=".Avtivities.SafofActivity" />
+        <activity android:name=".Avtivities.MainActivity" />
+        <activity android:name=".Avtivities.AllSchools" />
+        <activity android:name=".Avtivities.Chooser_Activity" />
+        <activity android:name=".Avtivities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewsActivity" />
-        <activity android:name=".DescActivity" />
-        <activity android:name=".SafofActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Avtivities.Home" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>

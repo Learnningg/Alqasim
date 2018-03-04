@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+
+    >
+
+    <com.szugyi.circlemenu.view.CircleLayout
+        android:id="@+id/circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:isRotating="false"
+        app:radius="110dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            style="@style/icon"
+            android:id="@+id/apsent"
+            android:src="@drawable/icon10"
+            />
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            style="@style/icon"
+            android:id="@+id/homework"
+            android:src="@drawable/work"
+            />
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            style="@style/icon"
+            android:id="@+id/activity"
+            android:src="@drawable/icon3"
+
+            />
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            style="@style/icon"
+            android:id="@+id/news"
+            android:src="@drawable/icon4"
+
+            />
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            style="@style/icon"
+            android:id="@+id/table"
+            android:src="@drawable/icon5"
+
+            />
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            style="@style/icone"
+            android:id="@+id/arrive"
+            android:src="@drawable/icon6"
+
+            />
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            style="@style/icone"
+            android:id="@+id/sharf"
+            android:src="@drawable/icon7"
+
+            />
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            style="@style/icone"
+            android:id="@+id/rsoom"
+            android:src="@drawable/icon8"
+
+            />
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            style="@style/icone"
+            android:id="@+id/state"
+            android:src="@drawable/icon9"
+
+            />
+
+    </com.szugyi.circlemenu.view.CircleLayout>
+
+
+
+
+</RelativeLayout>

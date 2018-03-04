@@ -7,14 +7,14 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:background="@drawable/back"
-    tools:context="com.example.m.schooles.DescActivity">
+    tools:context="com.Alatheer.m.schooles.Avtivities.DescActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="عنوان الخب روتفاصيله"
+        android:text="عنوان الخبر وتفاصيله"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         />
 
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:text="عنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيله"/>
+        android:text="عنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيلهعنوان الخب روتفاصيله عنوان الخبروتفاصيله عنوان الخبر وتفاصيله"/>
 
 
 </LinearLayout>
