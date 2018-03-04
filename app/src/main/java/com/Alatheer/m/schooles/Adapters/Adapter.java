@@ -65,11 +65,11 @@ News_Model Model;
         public Holder(View itemView) {
             super(itemView);
 
-            bank=(TextView)itemView.findViewById(R.id.title);
-            street=(TextView)itemView.findViewById(R.id.desc);
-            logo=(ImageView)itemView.findViewById(R.id.img);
+            bank=itemView.findViewById(R.id.title);
+            street=itemView.findViewById(R.id.desc);
+            logo=itemView.findViewById(R.id.img);
 
-            linearLayout=(LinearLayout)itemView.findViewById(R.id.linnn);
+            linearLayout=itemView.findViewById(R.id.linnn);
 
 
 

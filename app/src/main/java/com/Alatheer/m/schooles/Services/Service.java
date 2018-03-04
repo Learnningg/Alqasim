@@ -17,4 +17,7 @@ public interface Service {
     @GET("Api/AllSchool")
     Call<List<AllSchoolModel>>DiaplayAll_Schools();
 
+    ///////////////////////////////---------news Schools---------//////////////////
+
+
 }
