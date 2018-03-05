@@ -59,7 +59,7 @@ public class NewsActivity extends AppCompatActivity {
 
 
         Service service = ServicesApi.CreateApiClient().create(Service.class);
-        Call<List<News_Model>> call = service.getNewsData();
+        Call<List<News_Model>> call = service.getNewsData("2");
 
         call.enqueue(new Callback<List<News_Model>>() {
             @Override

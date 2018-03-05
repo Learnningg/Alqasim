@@ -10,13 +10,22 @@ import com.szugyi.circlemenu.view.CircleLayout;
 
 public class Home extends AppCompatActivity  implements CircleLayout.OnItemClickListener, CircleLayout.OnRotationFinishedListener{
 
+    CircleLayout circleLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
 
+        initview();
     }
+
+    private void initview() {
+
+        circleLayout=findViewById(R.id.circle);
+        circleLayout.setOnItemClickListener(this);
+    }
+
     @Override
     public void onItemClick(View view) {
 
@@ -27,8 +36,8 @@ public class Home extends AppCompatActivity  implements CircleLayout.OnItemClick
             switch (view.getId()) {
 
                 case R.id.activity:
-//                    Intent i1 =new Intent(Home.this,Activites.class);
-//                    startActivity(i1);
+                    Intent i1 =new Intent(Home.this,SafofActivity.class);
+                    startActivity(i1);
                     break;
                 case R.id.news:
 
