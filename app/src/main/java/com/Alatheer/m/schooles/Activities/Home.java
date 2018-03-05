@@ -76,7 +76,9 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
 
         List<Schools_Stages> schools_stagesList = schools_stages1.getArray_stages();
         Schools_Stages schools_stages = schools_stagesList.get(0);
-
+        Intent intent = new Intent(Home.this,SafofActivity.class);
+        intent.putExtra("schools_stages",schools_stages);
+        startActivity(intent);
 
     }
 
