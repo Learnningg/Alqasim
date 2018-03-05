@@ -62,6 +62,7 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
                 case R.id.news:
 
                         Intent i2 = new Intent(Home.this, NewsActivity.class);
+                        i2.putExtra("school_id",school_id);
                         startActivity(i2);
 
     }}

@@ -33,6 +33,7 @@
         <activity
             android:name=".Activities.Home"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".Activities.Student_State"></activity>
         <activity android:name=".Activities.SubClassesActivity"></activity>
     </application>
 
