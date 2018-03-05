@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/back"
     android:layout_height="match_parent"
-    tools:context="com.Alatheer.m.schooles.Avtivities.NewsActivity">
+    tools:context="com.Alatheer.m.schooles.Activities.NewsActivity">
 
 <android.support.v7.widget.RecyclerView
     android:id="@+id/recyc"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/back"
-    tools:context="com.Alatheer.m.schooles.Avtivities.SafofActivity">
+    tools:context="com.Alatheer.m.schooles.Activities.SafofActivity">
 
     <LinearLayout
         android:layout_marginTop="20dp"
@@ -29,7 +29,9 @@
             android:textStyle="bold"
             android:textSize="20dp"
             android:textColor="@color/white"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
 
         <View
             android:layout_marginTop="15dp"
@@ -49,12 +51,10 @@
     android:layout_weight="3"
     >
    <android.support.v7.widget.RecyclerView
-
        android:id="@+id/recView_sufouf"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        >
-
    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

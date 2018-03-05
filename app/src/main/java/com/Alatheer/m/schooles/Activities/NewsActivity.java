@@ -1,4 +1,4 @@
-package com.Alatheer.m.schooles.Avtivities;
+package com.Alatheer.m.schooles.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,7 +22,7 @@ import retrofit2.Response;
 public class NewsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Adapter adapter;
-    ArrayList<News_Model> atmArray ;
+    ArrayList<News_Model> newsList ;
 
     public static String [] title={
             "اول خبر",
@@ -43,17 +43,11 @@ public class NewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.recyc);
-
-//        for (int i = 0 ; i<title.length;i++) {
-//            News_Model atmModel = new News_Model(title[i],desc[i]);
-//
-//            atmArray.add(atmModel);
-//        }
-        atmArray = new ArrayList<>();
+        newsList = new ArrayList<>();
         recyclerView.setLayoutManager(new GridLayoutManager(NewsActivity.this, 1));
         recyclerView.setHasFixedSize(true);
 
-        adapter = new Adapter(NewsActivity.this, atmArray);
+        adapter = new Adapter(NewsActivity.this,newsList);
 
         recyclerView.setAdapter(adapter);
 
@@ -65,7 +59,7 @@ public class NewsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<News_Model>> call, Response<List<News_Model>> response) {
 
-                atmArray.addAll(response.body());
+                newsList.addAll(response.body());
                 adapter.notifyDataSetChanged();
 
             }

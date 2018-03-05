@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-import com.Alatheer.m.schooles.Avtivities.DescActivity;
+import com.Alatheer.m.schooles.Activities.DescActivity;
 import com.Alatheer.m.schooles.Models.News_Model;
 import com.Alatheer.m.schooles.R;
 

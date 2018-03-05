@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.Alatheer.m.schooles.Avtivities.AllSchools;
+import com.Alatheer.m.schooles.Activities.AllSchools;
 import com.Alatheer.m.schooles.Models.AllSchoolModel;
 import com.Alatheer.m.schooles.R;
 

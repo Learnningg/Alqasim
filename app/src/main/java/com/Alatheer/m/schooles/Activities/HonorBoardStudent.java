@@ -1,10 +1,9 @@
-package com.Alatheer.m.schooles.Avtivities;
+package com.Alatheer.m.schooles.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.Alatheer.m.schooles.Adapters.HonorBoardStudentAdapter;

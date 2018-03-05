@@ -31,6 +31,6 @@ public interface Service {
 
 
 
-    @GET("Api/SchoolStages/{id_school")
+    @GET("Api/SchoolStages/{id_school}")
     Call<School_Stages1> DisplayAll_SubClasses(@Path( "id_school") String id_school);
 }

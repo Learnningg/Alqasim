@@ -1,4 +1,4 @@
-package com.Alatheer.m.schooles.Avtivities;
+package com.Alatheer.m.schooles.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
