@@ -21,6 +21,7 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
     private CircleLayout circleLayout;
     private Presenter presenter;
     private String school_id;
+    private String user_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,9 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
             if(intent.hasExtra("school_id"))
             {
                 school_id = intent.getStringExtra("school_id");
+                user_id   = intent.getStringExtra("user_id");
+
+                Toast.makeText(this, ""+user_id, Toast.LENGTH_SHORT).show();
             }
         }
     }

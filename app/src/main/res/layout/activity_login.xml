@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -42,7 +47,7 @@
         >
         <EditText
 
-            android:id="@+id/user_name"
+            android:id="@+id/user_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -62,6 +67,7 @@
             android:background="@drawable/user_pass1"
             android:paddingLeft="15dp"
             android:paddingRight="65dp"
+            android:visibility="gone"
             />
         <RelativeLayout
             android:layout_width="match_parent"
@@ -96,3 +102,4 @@
     </LinearLayout>
 
 </RelativeLayout>
+</ScrollView>
