@@ -28,7 +28,7 @@ public interface Service {
     @GET("Api/AllNews/{class_id}")
     Call<List<News_Model>> getNewsData(@Path( "class_id") String class_id);
 
-    @GET("Api/HonorBoardStudent/{id_class_room")
+    @GET("Api/HonorBoardStudent/{id_class_room}")
     Call<List<HonerModel>> HonorBoardStudent(@Path( "id_class_room") String id_class_room);
 
 
@@ -39,7 +39,7 @@ public interface Service {
     @GET("Api/SchoolClassRoom/{sub_stages_id}")
     Call<List<SubClasses>> DisplayAll_SubClasses(@Path( "sub_stages_id") String sub_stages_id);
 
-    @GET("Api/EvaluationStudent/{id_class_room")
+    @GET("Api/EvaluationStudent/{id_class_room}")
     Call<List<Student_State_Model>> EvaluationStudent(@Path( "id_class_room") String id_class_room);
 
 }

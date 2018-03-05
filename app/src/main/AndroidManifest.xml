@@ -29,12 +29,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.Chooser_Activity" />
-        <activity android:name=".Activities.LoginActivity"></activity>
+        <activity android:name=".Activities.LoginActivity" />
         <activity
             android:name=".Activities.Home"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".Activities.Student_State"></activity>
-        <activity android:name=".Activities.SubClassesActivity"></activity>
+        <activity android:name=".Activities.Student_State" />
+        <activity android:name=".Activities.SubClassesActivity" />
+        <activity android:name=".Activities.ClassRoom"></activity>
+        <activity android:name=".Activities.HonorBoardStudent"></activity>
     </application>
 
 </manifest>

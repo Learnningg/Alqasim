@@ -28,14 +28,12 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
-                android:text="عنوان الخبر"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txt_student_degree"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ثققققققققققققفف"
                 android:textColor="@color/colorPrimary" />
         </LinearLayout>
 

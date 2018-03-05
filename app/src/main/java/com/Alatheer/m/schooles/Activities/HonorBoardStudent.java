@@ -1,5 +1,6 @@
 package com.Alatheer.m.schooles.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,6 +26,7 @@ public class HonorBoardStudent extends AppCompatActivity {
     HonorBoardStudentAdapter adapter;
     RecyclerView recyclerView;
     private LinearLayoutManager mLayoutManager;
+    String class_room_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class HonorBoardStudent extends AppCompatActivity {
         setContentView(R.layout.activity_honor_board_student);
         getDataFromIntent();
         initView();
+
         getDataFromServer();
 
     }
@@ -40,15 +43,19 @@ public class HonorBoardStudent extends AppCompatActivity {
 
 
         Service service = ServicesApi.CreateApiClient().create(Service.class);
-        Call<List<HonerModel>> call = service.HonorBoardStudent("");
+        Call<List<HonerModel>> call = service.HonorBoardStudent(class_room_id);
         call.enqueue(new Callback<List<HonerModel>>() {
             @Override
             public void onResponse(Call<List<HonerModel>> call, Response<List<HonerModel> > response) {
 
-
+                model.clear();
                 model.addAll( response.body());
-                adapter.notifyDataSetChanged();
 
+                if (model.get(0).getMessage().equals("no data")){
+                    Toast.makeText(HonorBoardStudent.this, "no data", Toast.LENGTH_SHORT).show();
+                }else {
+                    adapter.notifyDataSetChanged();
+                }
 
             }
 
@@ -77,7 +84,14 @@ public class HonorBoardStudent extends AppCompatActivity {
 
     private void getDataFromIntent() {
 
-
+        Intent intent = getIntent();
+        if (intent!=null)
+        {
+            if (intent.hasExtra("class_room_id"))
+            {
+                class_room_id = intent.getStringExtra("class_room_id");
+            }
+        }
 
     }
 

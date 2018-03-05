@@ -44,6 +44,7 @@ public class SubClassesAdapter extends RecyclerView.Adapter <SubClassesAdapter.m
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                subClassesActivity.setPos(holder.getAdapterPosition());
             }
         });
     }

@@ -10,6 +10,7 @@ public class Student_State_Model {
     private String student_name;
     private String subject_name;
     private String evaluatin_degree;
+    private String message;
 
 
     public Student_State_Model(String exam_name, String student_name, String subject_name, String evaluatin_degree) {
@@ -17,6 +18,18 @@ public class Student_State_Model {
         this.student_name = student_name;
         this.subject_name = subject_name;
         this.evaluatin_degree = evaluatin_degree;
+    }
+
+    public Student_State_Model(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getExam_name() {

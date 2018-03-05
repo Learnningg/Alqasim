@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">المدارس</string>
+    <string name="absent">غياب الطلاب</string>
+    <string name="homework">الواجبات</string>
+    <string name="honorboard">لوحه الشرف</string>
+    <string name="table">جدول الحصص</string>
+    <string name="activities">الانشطة</string>
+    <string name="rate">التقييم</string>
 
 </resources>

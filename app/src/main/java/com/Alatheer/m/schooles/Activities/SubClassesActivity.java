@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import com.Alatheer.m.schooles.Adapters.SubClassesAdapter;
 import com.Alatheer.m.schooles.Models.SubClasses;
@@ -53,5 +54,13 @@ public class SubClassesActivity extends AppCompatActivity {
 
 
 
+    }
+    public void setPos(int pos)
+    {
+        SubClasses subClasses =subClassesList.get(pos);
+        Toast.makeText(this, ""+subClasses.getId_class_room(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this,ClassRoom.class);
+        intent.putExtra("class_room_id",subClasses.getId_class_room());
+        startActivity(intent);
     }
 }

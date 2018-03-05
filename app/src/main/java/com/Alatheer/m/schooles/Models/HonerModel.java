@@ -8,12 +8,27 @@ public class HonerModel {
 
     private String student_name;
     private String degree;
+    private String message;
 
     public HonerModel(String student_name, String degree) {
         this.student_name = student_name;
         this.degree = degree;
     }
 
+    public HonerModel() {
+    }
+
+    public HonerModel(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
     public String getStudent_name() {
         return student_name;
