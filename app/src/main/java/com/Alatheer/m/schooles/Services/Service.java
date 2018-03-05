@@ -1,5 +1,6 @@
 package com.Alatheer.m.schooles.Services;
 
+import com.Alatheer.m.schooles.Models.AllActivities_Model;
 import com.Alatheer.m.schooles.Models.AllSchoolModel;
 import com.Alatheer.m.schooles.Models.HonerModel;
 import com.Alatheer.m.schooles.Models.News_Model;
@@ -41,5 +42,9 @@ public interface Service {
 
     @GET("Api/EvaluationStudent/{id_class_room}")
     Call<List<Student_State_Model>> EvaluationStudent(@Path( "id_class_room") String id_class_room);
+
+
+    @GET("Api/AllActivities/{id_class_room}")
+    Call<List<AllActivities_Model>> AllActivities(@Path( "id_class_room") String id_class_room);
 
 }
