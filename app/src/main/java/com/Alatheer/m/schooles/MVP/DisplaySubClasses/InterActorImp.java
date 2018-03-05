@@ -1,12 +1,15 @@
-package com.Alatheer.m.schooles.MVP.Display_AllSubClasses;
+package com.Alatheer.m.schooles.MVP.DisplaySubClasses;
 
 import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.Alatheer.m.schooles.Models.School_Stages1;
+import com.Alatheer.m.schooles.Models.SubClasses;
 import com.Alatheer.m.schooles.Services.Service;
 import com.Alatheer.m.schooles.Services.ServicesApi;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,18 +25,19 @@ public class InterActorImp implements InterActor {
 
 
     @Override
-    public void DisplayAllSubClasses(String id_school,final onCompleteListener listener, final Context context) {
+    public void DisplayAllSubClasses(String sub_stages_id,final onCompleteListener listener, final Context context) {
 
         Retrofit retrofit = ServicesApi.CreateApiClient();
         Service service = retrofit.create(Service.class);
-        Call<School_Stages1> call = service.DisplayAll_SubClasses(id_school);
-        call.enqueue(new Callback<School_Stages1>() {
+        Call<List<SubClasses>> call = service.DisplayAll_SubClasses(sub_stages_id);
+        call.enqueue(new Callback<List<SubClasses>>() {
             @Override
-            public void onResponse(Call<School_Stages1> call, Response<School_Stages1> response) {
+            public void onResponse(Call<List<SubClasses>> call, Response<List<SubClasses>> response) {
                 if (response.isSuccessful())
                 {
-                    School_Stages1 schools_stages1 = response.body();
-                    listener.OnDisplayDataSuccess(schools_stages1);
+
+                    List <SubClasses> subClassesList = response.body();
+                    listener.OnDisplayDataSuccess(subClassesList);
                 }else
                     {
                         listener.OnFailed("error something went haywire");
@@ -41,7 +45,7 @@ public class InterActorImp implements InterActor {
             }
 
             @Override
-            public void onFailure(Call<School_Stages1> call, Throwable t) {
+            public void onFailure(Call<List<SubClasses>> call, Throwable t) {
                 listener.OnFailed("error check network connection ");
                 Log.e("error",t.getMessage());
                 Toast.makeText(context, ""+t.getMessage(), Toast.LENGTH_SHORT).show();

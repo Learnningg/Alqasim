@@ -6,9 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import com.Alatheer.m.schooles.MVP.Display_AllSubClasses.Presenter;
-import com.Alatheer.m.schooles.MVP.Display_AllSubClasses.PresenterImp;
-import com.Alatheer.m.schooles.MVP.Display_AllSubClasses.ViewData;
+import com.Alatheer.m.schooles.MVP.Display_AllSubStages.Presenter;
+import com.Alatheer.m.schooles.MVP.Display_AllSubStages.PresenterImp;
+import com.Alatheer.m.schooles.MVP.Display_AllSubStages.ViewData;
 import com.Alatheer.m.schooles.Models.School_Stages1;
 import com.Alatheer.m.schooles.Models.Schools_Stages;
 import com.Alatheer.m.schooles.R;
@@ -57,7 +57,7 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
             switch (view.getId()) {
 
                 case R.id.activity:
-                    presenter.DisplayAllSubClasses(school_id);
+                    presenter.DisplayAll_SubStages(school_id);
                        break;
                 case R.id.news:
 

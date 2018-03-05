@@ -9,15 +9,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.Alatheer.m.schooles.Adapters.SubStagesAdapter;
+import com.Alatheer.m.schooles.MVP.DisplaySubClasses.Presenter;
+import com.Alatheer.m.schooles.MVP.DisplaySubClasses.PresenterImp;
+import com.Alatheer.m.schooles.MVP.DisplaySubClasses.ViewData;
 import com.Alatheer.m.schooles.Models.School_Stages1;
 import com.Alatheer.m.schooles.Models.Schools_Stages;
+import com.Alatheer.m.schooles.Models.SubClasses;
 import com.Alatheer.m.schooles.Models.SubStages;
 import com.Alatheer.m.schooles.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SafofActivity extends AppCompatActivity {
+public class SafofActivity extends AppCompatActivity implements ViewData {
 
     private RecyclerView recView_sufouf;
     private RecyclerView.LayoutManager manager;
@@ -25,10 +30,12 @@ public class SafofActivity extends AppCompatActivity {
     private Schools_Stages school_stages;
     private TextView stage_name;
     private List<SubStages> subStages;
+    private Presenter presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_safof);
+        presenter = new PresenterImp(this,this);
         initView();
         getDataFromIntent();
     }
@@ -67,6 +74,23 @@ public class SafofActivity extends AppCompatActivity {
 
     public void setPos(int pos)
     {
-        Toast.makeText(this, ""+subStages.get(pos).getSub_stages_name(), Toast.LENGTH_SHORT).show();
+        presenter.DisplayAllSubClasses(subStages.get(pos).getSub_stages_id());
+       // Toast.makeText(this, ""+subStages.get(pos).getSub_stages_id(), Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void OnDisplayDataSuccess(List<SubClasses> subClassesList) {
+
+        Intent intent = new Intent(SafofActivity.this,SubClassesActivity.class);
+        intent.putExtra("subClassesList", (Serializable) subClassesList);
+        startActivity(intent);
+
+    }
+
+    @Override
+    public void OnFailed(String error) {
+        Toast.makeText(this, ""+error, Toast.LENGTH_SHORT).show();
+
     }
 }

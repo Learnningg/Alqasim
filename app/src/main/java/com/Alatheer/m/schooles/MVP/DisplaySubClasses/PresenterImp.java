@@ -1,14 +1,17 @@
-package com.Alatheer.m.schooles.MVP.Display_AllSubClasses;
+package com.Alatheer.m.schooles.MVP.DisplaySubClasses;
 
 import android.content.Context;
 
 import com.Alatheer.m.schooles.Models.School_Stages1;
+import com.Alatheer.m.schooles.Models.SubClasses;
+
+import java.util.List;
 
 /**
  * Created by elashry on 3/3/2018.
  */
 
-public class PresenterImp implements Presenter ,InterActor.onCompleteListener{
+public class PresenterImp implements Presenter,InterActor.onCompleteListener{
 
     private ViewData viewData;
     private InterActor interActor;
@@ -26,10 +29,10 @@ public class PresenterImp implements Presenter ,InterActor.onCompleteListener{
     }
 
     @Override
-    public void OnDisplayDataSuccess(School_Stages1 schools_stages1) {
+    public void OnDisplayDataSuccess(List<SubClasses> subClasses) {
         if (viewData!=null)
         {
-            viewData.OnDisplayDataSuccess(schools_stages1);
+            viewData.OnDisplayDataSuccess(subClasses);
         }
     }
 

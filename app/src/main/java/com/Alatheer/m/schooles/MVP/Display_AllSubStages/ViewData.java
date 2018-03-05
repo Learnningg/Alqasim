@@ -1,4 +1,4 @@
-package com.Alatheer.m.schooles.MVP.Display_AllSubClasses;
+package com.Alatheer.m.schooles.MVP.Display_AllSubStages;
 
 import com.Alatheer.m.schooles.Models.School_Stages1;
 

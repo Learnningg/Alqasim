@@ -4,6 +4,7 @@ import com.Alatheer.m.schooles.Models.AllSchoolModel;
 import com.Alatheer.m.schooles.Models.HonerModel;
 import com.Alatheer.m.schooles.Models.News_Model;
 import com.Alatheer.m.schooles.Models.School_Stages1;
+import com.Alatheer.m.schooles.Models.SubClasses;
 
 import java.util.List;
 
@@ -32,5 +33,8 @@ public interface Service {
 
 
     @GET("Api/SchoolStages/{id_school}")
-    Call<School_Stages1> DisplayAll_SubClasses(@Path( "id_school") String id_school);
+    Call<School_Stages1> DisplayAll_SubStages(@Path( "id_school") String id_school);
+
+    @GET("Api/SchoolClassRoom/{sub_stages_id}")
+    Call<List<SubClasses>> DisplayAll_SubClasses(@Path( "sub_stages_id") String sub_stages_id);
 }

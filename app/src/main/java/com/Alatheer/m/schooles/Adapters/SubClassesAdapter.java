@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.Alatheer.m.schooles.Activities.SafofActivity;
+import com.Alatheer.m.schooles.Activities.SubClassesActivity;
+import com.Alatheer.m.schooles.Models.SubClasses;
 import com.Alatheer.m.schooles.Models.SubStages;
 import com.Alatheer.m.schooles.R;
 
@@ -17,54 +19,53 @@ import java.util.List;
  * Created by elashry on 3/5/2018.
  */
 
-public class SubStagesAdapter extends RecyclerView.Adapter <SubStagesAdapter.mViewHolder>{
+public class SubClassesAdapter extends RecyclerView.Adapter <SubClassesAdapter.mViewHolder>{
 
     Context context;
-    List<SubStages> subStagesList;
-    SafofActivity safofActivity;
+    List<SubClasses> subClassesList;
+    SubClassesActivity subClassesActivity;
 
-    public SubStagesAdapter(Context context, List<SubStages> subStagesList) {
+    public SubClassesAdapter(Context context, List<SubClasses> subClassesList) {
         this.context = context;
-        this.subStagesList = subStagesList;
-        safofActivity = (SafofActivity) context;
+        this.subClassesList = subClassesList;
+        subClassesActivity = (SubClassesActivity) context;
     }
 
     @Override
     public mViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.sub_stages_row,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.sub_classes_row,parent,false);
         return new mViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final mViewHolder holder, int position) {
-        SubStages subStages = subStagesList.get(position);
-        holder.BindData(subStages);
+        SubClasses subClasses = subClassesList.get(position);
+        holder.BindData(subClasses);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                safofActivity.setPos(holder.getAdapterPosition());
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return subStagesList.size();
+        return subClassesList.size();
     }
 
     public class mViewHolder extends RecyclerView.ViewHolder
     {
-        private TextView sub_stage_name;
+        private TextView sub_classes_name;
 
         public mViewHolder(View itemView) {
             super(itemView);
 
-            sub_stage_name = itemView.findViewById(R.id.sub_stage_name);
+            sub_classes_name = itemView.findViewById(R.id.sub_classes_name);
 
         }
-        public void BindData(SubStages subStages)
+        public void BindData(SubClasses subClasses)
         {
-            sub_stage_name.setText(subStages.getSub_stages_name());
+            sub_classes_name.setText(subClasses.getAr_name());
         }
     }
 }

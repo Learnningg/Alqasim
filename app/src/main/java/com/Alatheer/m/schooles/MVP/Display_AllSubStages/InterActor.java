@@ -1,4 +1,4 @@
-package com.Alatheer.m.schooles.MVP.Display_AllSubClasses;
+package com.Alatheer.m.schooles.MVP.Display_AllSubStages;
 
 import android.content.Context;
 
@@ -16,6 +16,6 @@ public interface InterActor {
         void OnFailed(String error);
     }
 
-    void DisplayAllSubClasses(String id_school,InterActor.onCompleteListener listener, Context context);
+    void DisplayAll_SubStages(String id_school,InterActor.onCompleteListener listener, Context context);
 
 }
