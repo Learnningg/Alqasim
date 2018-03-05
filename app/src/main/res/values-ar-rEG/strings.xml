@@ -7,5 +7,7 @@
     <string name="table">جدول الحصص</string>
     <string name="activities">الانشطة</string>
     <string name="rate">التقييم</string>
+    <string name="row_name">اسم الصف</string>
+    <string name="tuition_fees">الرسوم</string>
 
 </resources>

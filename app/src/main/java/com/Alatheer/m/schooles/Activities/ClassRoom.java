@@ -62,6 +62,9 @@ public class ClassRoom extends AppCompatActivity implements View.OnClickListener
             case R.id.txt_absent:
                 break;
             case R.id.txt_activities:
+                Intent intent3 = new Intent(this,Activities.class);
+                intent3.putExtra("class_room_id",class_room_id);
+                startActivity(intent3);
                 break;
             case R.id.txt_honorbourd:
                 Intent intent4 = new Intent(this,HonorBoardStudent.class);

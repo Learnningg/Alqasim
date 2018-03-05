@@ -37,6 +37,7 @@
         <activity android:name=".Activities.SubClassesActivity" />
         <activity android:name=".Activities.ClassRoom"></activity>
         <activity android:name=".Activities.HonorBoardStudent"></activity>
+        <activity android:name=".Activities.Activities"></activity>
     </application>
 
 </manifest>
