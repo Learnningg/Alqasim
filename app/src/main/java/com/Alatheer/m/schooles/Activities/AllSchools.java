@@ -22,6 +22,8 @@ import com.Alatheer.m.schooles.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 public class AllSchools extends AppCompatActivity implements ViewData {
 
     private RecyclerView recView_AllSchool;
@@ -42,6 +44,8 @@ public class AllSchools extends AppCompatActivity implements ViewData {
     }
 
     private void initView() {
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
 
         swipeRefresh       = findViewById(R.id.swipeRefresh);
         progressBar        = findViewById(R.id.progressBar);

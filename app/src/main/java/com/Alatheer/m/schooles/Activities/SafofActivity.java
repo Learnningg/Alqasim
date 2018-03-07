@@ -22,6 +22,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 public class SafofActivity extends AppCompatActivity implements ViewData {
 
     private RecyclerView recView_sufouf;
@@ -41,6 +43,8 @@ public class SafofActivity extends AppCompatActivity implements ViewData {
     }
 
     private void initView() {
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
         subStages = new ArrayList<>();
         stage_name = findViewById(R.id.stage_name);
         recView_sufouf = findViewById(R.id.recView_sufouf);

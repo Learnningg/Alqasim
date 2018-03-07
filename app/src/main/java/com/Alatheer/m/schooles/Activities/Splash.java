@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.Alatheer.m.schooles.R;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 
 public class Splash extends AppCompatActivity {
 
@@ -14,7 +16,8 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
 
 
 

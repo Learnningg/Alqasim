@@ -16,6 +16,8 @@ import com.Alatheer.m.schooles.R;
 import com.romainpiel.shimmer.Shimmer;
 import com.romainpiel.shimmer.ShimmerTextView;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 public class LoginActivity extends AppCompatActivity implements ViewData {
 
     private ShimmerTextView shimmer;
@@ -55,6 +57,8 @@ public class LoginActivity extends AppCompatActivity implements ViewData {
     }
 
     private void initView() {
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
         user_id = findViewById(R.id.user_id);
         shimmer = findViewById(R.id.shimmer);
         login =findViewById(R.id.btnlogin);

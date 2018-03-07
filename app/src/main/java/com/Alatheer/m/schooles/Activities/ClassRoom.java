@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.Alatheer.m.schooles.R;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 public class ClassRoom extends AppCompatActivity implements View.OnClickListener {
 
     CardView homework,absent,activity,honorboard,rate,table;
@@ -33,6 +35,8 @@ public class ClassRoom extends AppCompatActivity implements View.OnClickListener
     }
 
     private void initView() {
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
         homework   = findViewById(R.id.txt_homework);
         absent     = findViewById(R.id.txt_absent);
         activity   = findViewById(R.id.txt_activities);

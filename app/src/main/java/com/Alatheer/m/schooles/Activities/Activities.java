@@ -13,6 +13,8 @@ import com.Alatheer.m.schooles.Services.Service;
 import com.Alatheer.m.schooles.Services.ServicesApi;
 import java.util.ArrayList;
 import java.util.List;
+
+import me.anwarshahriar.calligrapher.Calligrapher;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,10 +31,12 @@ public class Activities extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activities);
 
+
+
         getDataFromIntent();
         initView();
         getDataFromServer();
-        Toast.makeText(this, ""+class_room_id, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, ""+class_room_id, Toast.LENGTH_SHORT).show();
     }
 
 
@@ -58,13 +62,15 @@ public class Activities extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<AllActivities_Model>> call, Throwable t) {
 
-                Toast.makeText(Activities.this, "" + t.getMessage(), Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(Activities.this, "" + t.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
         });
     }
 
     private void initView() {
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
         recyclerView = findViewById(R.id.recView_activities);
         model = new ArrayList<>();
         mLayoutManager=new LinearLayoutManager(this);

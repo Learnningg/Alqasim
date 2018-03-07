@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.Alatheer.m.schooles.MVP.Display_AllSubStages.Presenter;
@@ -16,12 +17,15 @@ import com.szugyi.circlemenu.view.CircleLayout;
 
 import java.util.List;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 public class Home extends AppCompatActivity  implements ViewData, CircleLayout.OnItemClickListener, CircleLayout.OnRotationFinishedListener{
 
     private CircleLayout circleLayout;
     private Presenter presenter;
     private String school_id;
     private String student_code;
+    Button news,student_fees,school_fees,classes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,49 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
         presenter = new PresenterImp(this,this);
         initView();
         getDataFromIntent();
+
+
+        news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i2 = new Intent(Home.this, NewsActivity.class);
+                i2.putExtra("school_id",school_id);
+                startActivity(i2);
+            }
+        });
+        student_fees.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i4= new Intent(Home.this, Student_Fees.class);
+                i4.putExtra("student_code",student_code);
+                startActivity(i4);
+            }
+        });
+        classes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.DisplayAll_SubStages(school_id);
+
+            }
+        });
+
+        news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Home.this,NewsActivity.class);
+                startActivity(i);
+            }
+        });
+
+        school_fees.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i3= new Intent(Home.this, Rsoom.class);
+                i3.putExtra("school_id",school_id);
+                startActivity(i3);
+            }
+        });
     }
 
     private void getDataFromIntent() {
@@ -40,15 +87,23 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
                 school_id = intent.getStringExtra("school_id");
                 student_code   = intent.getStringExtra("student_code");
 
-                Toast.makeText(this, ""+student_code, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(this, ""+student_code, Toast.LENGTH_SHORT).show();
             }
         }
     }
 
     private void initView() {
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
 
-        circleLayout=findViewById(R.id.circle);
-        circleLayout.setOnItemClickListener(this);
+        news=findViewById(R.id.btn_news);
+        student_fees=findViewById(R.id.btn_student_fees);
+        school_fees=findViewById(R.id.btn_school_fees);
+        classes=findViewById(R.id.classes);
+
+
+       // circleLayout=findViewById(R.id.circle);
+       // circleLayout.setOnItemClickListener(this);
     }
 
     @Override
@@ -57,28 +112,21 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
 
 
 
-
+/*
             switch (view.getId()) {
 
                 case R.id.activity:
-                    presenter.DisplayAll_SubStages(school_id);
                        break;
                 case R.id.news:
 
-                        Intent i2 = new Intent(Home.this, NewsActivity.class);
-                        i2.putExtra("school_id",school_id);
-                        startActivity(i2);
+
                 case R.id.rsoom:
 
-                    Intent i3= new Intent(Home.this, Rsoom.class);
-                    i3.putExtra("school_id",school_id);
-                    startActivity(i3);
-                case R.id.absent:
 
-                    Intent i4= new Intent(Home.this, Student_Fees.class);
-                    i4.putExtra("student_code",student_code);
-                    startActivity(i4);
-    }}
+                case R.id.absent:*/
+
+   // }
+}
 
     @Override
     public void onRotationFinished(View view) {

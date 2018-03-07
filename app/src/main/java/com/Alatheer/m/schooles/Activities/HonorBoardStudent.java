@@ -16,6 +16,7 @@ import com.Alatheer.m.schooles.Services.ServicesApi;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -69,6 +70,8 @@ public class HonorBoardStudent extends AppCompatActivity {
     }
 
     private void initView() {
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
         recyclerView = findViewById(R.id.rec_honor);
         model = new ArrayList<>();
         mLayoutManager=new LinearLayoutManager(this);

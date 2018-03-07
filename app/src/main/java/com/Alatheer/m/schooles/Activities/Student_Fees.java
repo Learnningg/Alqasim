@@ -11,6 +11,7 @@ import com.Alatheer.m.schooles.R;
 import com.Alatheer.m.schooles.Services.Service;
 import com.Alatheer.m.schooles.Services.ServicesApi;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -75,6 +76,8 @@ public class Student_Fees extends AppCompatActivity {
     }
 
     private void initview() {
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
         name            =findViewById(R.id.txt_name            );
         transport_type  =findViewById(R.id.txt_transport_type  );
         payment_type    =findViewById(R.id.txt_payment_type    );

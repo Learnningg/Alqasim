@@ -14,6 +14,8 @@ import com.Alatheer.m.schooles.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 public class SubClassesActivity extends AppCompatActivity {
 
     private RecyclerView recView_SubClasses;
@@ -46,6 +48,8 @@ public class SubClassesActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
         subClassesList = new ArrayList<>();
         recView_SubClasses = findViewById(R.id.recView_SubClasses);
         manager = new GridLayoutManager(this,3);

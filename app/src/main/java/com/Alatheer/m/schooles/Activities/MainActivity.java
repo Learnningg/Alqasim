@@ -8,13 +8,17 @@ import android.widget.Button;
 
 import com.Alatheer.m.schooles.R;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
+
 public class MainActivity extends AppCompatActivity {
 Button sfof,news;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        news=findViewById(R.id.news);
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
+       /* news=findViewById(R.id.news);
 
         sfof.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,7 +33,7 @@ Button sfof,news;
                 Intent i = new Intent(MainActivity.this,NewsActivity.class);
                 startActivity(i);
             }
-        });
+        });*/
 
     }
 }

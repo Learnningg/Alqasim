@@ -16,6 +16,7 @@ import com.Alatheer.m.schooles.Services.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.anwarshahriar.calligrapher.Calligrapher;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -37,6 +38,8 @@ public class NewsActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
         recyclerView = findViewById(R.id.recyc);
         newsList = new ArrayList<>();
         recyclerView.setLayoutManager(new GridLayoutManager(NewsActivity.this, 1));
@@ -49,12 +52,13 @@ public class NewsActivity extends AppCompatActivity {
     private void getDataFromServer() {
 
         Service service = ServicesApi.CreateApiClient().create(Service.class);
-        Call<List<News_Model>> call = service.getNewsData(school_id);
+        Call<List<News_Model>> call = service.getNewsData("1");
 
         call.enqueue(new Callback<List<News_Model>>() {
             @Override
             public void onResponse(Call<List<News_Model>> call, Response<List<News_Model>> response) {
 
+                newsList.clear();
                 newsList.addAll(response.body());
                 allNewsAdapter.notifyDataSetChanged();
 
@@ -62,7 +66,7 @@ public class NewsActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<News_Model>> call, Throwable t) {
-                Toast.makeText(NewsActivity.this, "fail"+t, Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(NewsActivity.this, "fail"+t, Toast.LENGTH_SHORT).show();
 
 
             }
