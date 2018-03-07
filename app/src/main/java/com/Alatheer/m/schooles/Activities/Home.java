@@ -75,7 +75,7 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
                     startActivity(i3);
                 case R.id.absent:
 
-                    Intent i4= new Intent(Home.this, Rsoom.class);
+                    Intent i4= new Intent(Home.this, Student_Fees.class);
                     i4.putExtra("student_code",student_code);
                     startActivity(i4);
     }}

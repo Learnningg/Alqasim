@@ -75,15 +75,15 @@ public class Student_Fees extends AppCompatActivity {
     }
 
     private void initview() {
-        name            =findViewById(R.id.txt_tuition_fees);
-        transport_type  =findViewById(R.id.txt_tuition_fees);
-        payment_type    =findViewById(R.id.txt_tuition_fees);
-        current_all_fees=findViewById(R.id.txt_tuition_fees);
-        current_remain  =findViewById(R.id.txt_tuition_fees);
-        current_paid    =findViewById(R.id.txt_tuition_fees);
-        sub_stages_name =findViewById(R.id.txt_tuition_fees);
-        classrooms_name =findViewById(R.id.txt_tuition_fees);
-        school_name     =findViewById(R.id.txt_tuition_fees);
+        name            =findViewById(R.id.txt_name            );
+        transport_type  =findViewById(R.id.txt_transport_type  );
+        payment_type    =findViewById(R.id.txt_payment_type    );
+        current_all_fees=findViewById(R.id.txt_current_all_fees);
+        current_remain  =findViewById(R.id.txt_current_remain  );
+        current_paid    =findViewById(R.id.txt_current_paid    );
+        sub_stages_name =findViewById(R.id.txt_sub_stages_name );
+        classrooms_name =findViewById(R.id.txt_classrooms_name );
+        school_name     =findViewById(R.id.txt_school_name     );
 
     }
 }

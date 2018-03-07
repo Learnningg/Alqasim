@@ -9,4 +9,14 @@
     <string name="row_name">row name</string>
     <string name="tuition_fees">tuition fees</string>
     <string name="transfer_fees_1">pay</string>
+    <string name="student_fees">رسوم الطالب</string>
+    <string name="name">الاسم</string>
+    <string name="classrooms_name">الفصل</string>
+    <string name="sub_stages_name">الصف</string>
+    <string name="school_name">المدرسه</string>
+    <string name="transport_type">النقل</string>
+    <string name="payment_type">الدفع</string>
+    <string name="current_all_fees">المدفوع</string>
+    <string name="current_remain">المدفوع</string>
+    <string name="current_paid">المدفوع</string>
 </resources>

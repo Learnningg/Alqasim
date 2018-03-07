@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back1"
     tools:context="com.Alatheer.m.schooles.Activities.HonorBoardStudent">
     <android.support.v7.widget.RecyclerView
 
         android:id="@+id/rec_honor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/back"
+        android:background="@drawable/back1"
         >
 
     </android.support.v7.widget.RecyclerView>
