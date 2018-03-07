@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity implements ViewData {
     public void OnDisplayDataSuccess(LoginModel loginModel) {
          Intent intent=new Intent(LoginActivity.this,Home.class);
                 intent.putExtra("school_id",school_id);
-                intent.putExtra("user_id",loginModel.getStudent_code());
+                intent.putExtra("student_code",loginModel.getStudent_code());
                 startActivity(intent);
     }
 

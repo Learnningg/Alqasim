@@ -50,7 +50,7 @@
             android:id="@+id/user_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
+            android:inputType="numberDecimal"
             android:background="@drawable/user_name"
             android:paddingLeft="15dp"
             android:paddingRight="65dp"

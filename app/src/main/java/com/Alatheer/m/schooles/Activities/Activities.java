@@ -6,18 +6,13 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
-
 import com.Alatheer.m.schooles.Adapters.All_Activities_Adapter;
-import com.Alatheer.m.schooles.Adapters.StudentStateAdapter;
 import com.Alatheer.m.schooles.Models.AllActivities_Model;
-import com.Alatheer.m.schooles.Models.Student_State_Model;
 import com.Alatheer.m.schooles.R;
 import com.Alatheer.m.schooles.Services.Service;
 import com.Alatheer.m.schooles.Services.ServicesApi;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -53,13 +48,11 @@ public class Activities extends AppCompatActivity {
 
                 model.clear();
                 model.addAll( response.body());
-
                 if (model.get(0).getMessage().equals("no activities")){
                     Toast.makeText(Activities.this, "no activities", Toast.LENGTH_SHORT).show();
                 }else {
                     adapter.notifyDataSetChanged();
                 }
-
             }
 
             @Override

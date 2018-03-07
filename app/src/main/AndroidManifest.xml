@@ -35,9 +35,11 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Activities.Student_State" />
         <activity android:name=".Activities.SubClassesActivity" />
-        <activity android:name=".Activities.ClassRoom"></activity>
-        <activity android:name=".Activities.HonorBoardStudent"></activity>
-        <activity android:name=".Activities.Activities"></activity>
+        <activity android:name=".Activities.ClassRoom" />
+        <activity android:name=".Activities.HonorBoardStudent" />
+        <activity android:name=".Activities.Activities" />
+        <activity android:name=".Activities.Rsoom" />
+        <activity android:name=".Activities.Student_Fees"></activity>
     </application>
 
 </manifest>
