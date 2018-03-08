@@ -21,14 +21,14 @@
         <activity android:name=".Activities.DescActivity" />
         <activity android:name=".Activities.SafofActivity" />
         <activity android:name=".Activities.MainActivity" />
-        <activity android:name=".Activities.AllSchools">
+        <activity android:name=".Activities.Chooser_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.Chooser_Activity" />
+        <activity android:name=".Activities.AllSchools" />
         <activity android:name=".Activities.LoginActivity" />
         <activity
             android:name=".Activities.Home"
