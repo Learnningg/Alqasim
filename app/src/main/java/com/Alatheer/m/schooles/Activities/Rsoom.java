@@ -55,7 +55,7 @@ public class Rsoom extends AppCompatActivity {
     private void getDataFromServer() {
 
         Service service = ServicesApi.CreateApiClient().create(Service.class);
-        Call<List<School_Fees_Model>> call = service.GetSchoolFees(school_id);
+        Call<List<School_Fees_Model>> call = service.GetSchoolFees("4");
 
         call.enqueue(new Callback<List<School_Fees_Model>>() {
             @Override

@@ -1,8 +1,10 @@
 package com.Alatheer.m.schooles.Activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +14,7 @@ import com.Alatheer.m.schooles.MVP.LoginMVP.Presenter;
 import com.Alatheer.m.schooles.MVP.LoginMVP.PresenterImp;
 import com.Alatheer.m.schooles.MVP.LoginMVP.ViewData;
 import com.Alatheer.m.schooles.Models.LoginModel;
+import com.Alatheer.m.schooles.Preferense;
 import com.Alatheer.m.schooles.R;
 import com.romainpiel.shimmer.Shimmer;
 import com.romainpiel.shimmer.ShimmerTextView;
@@ -22,13 +25,26 @@ public class LoginActivity extends AppCompatActivity implements ViewData {
 
     private ShimmerTextView shimmer;
     private Button login;
-    private String school_id;
+    private String school_id,id;
     private EditText user_id;
     private Presenter presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        SharedPreferences sharedPreferences=getSharedPreferences("id",MODE_PRIVATE);
+         id=sharedPreferences.getString("user_id","");
+        if (!TextUtils.isEmpty(id)) {
+
+            Preferense pref = new Preferense(LoginActivity.this);
+            pref.CreateSharedPref(id, "1");
+            Intent intent = new Intent(LoginActivity.this, Home.class);
+            intent.putExtra("user_id", id);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+
+            finish();
+        }
         presenter = new PresenterImp(this,this);
         initView();
         getDataFromIntent();
@@ -82,10 +98,16 @@ public class LoginActivity extends AppCompatActivity implements ViewData {
 
     @Override
     public void OnDisplayDataSuccess(LoginModel loginModel) {
-         Intent intent=new Intent(LoginActivity.this,Home.class);
-                intent.putExtra("school_id",school_id);
-                intent.putExtra("student_code",loginModel.getStudent_code());
-                startActivity(intent);
+
+
+        Preferense pref = new Preferense(LoginActivity.this);
+        pref.CreateSharedPref(id,"1");
+        Intent intent = new Intent(LoginActivity.this, Home.class);
+        intent.putExtra("school_id",school_id);
+        intent.putExtra("student_code",loginModel.getStudent_code());
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
     }
 
     @Override

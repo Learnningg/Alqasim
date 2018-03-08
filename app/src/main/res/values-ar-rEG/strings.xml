@@ -21,9 +21,8 @@
     <string name="current_remain">الباقى</string>
     <string name="current_paid">المدفوع</string>
     <string name="news">الاخبار</string>
-    <string name="arrive">الوصول</string>
+    <string name="arrive">عن المدرسه</string>
     <string name="classes">الفصول</string>
-    <string name="about">عن التطبيق</string>
     <string name="contact">تواصل معنا</string>
 
 </resources>
