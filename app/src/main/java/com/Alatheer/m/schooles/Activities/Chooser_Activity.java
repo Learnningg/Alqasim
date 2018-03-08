@@ -22,8 +22,10 @@ public class Chooser_Activity extends AppCompatActivity {
         student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent=new Intent(Chooser_Activity.this,LoginActivity.class);
                 startActivity(intent);
+
             }
         });
     }
@@ -33,4 +35,4 @@ public class Chooser_Activity extends AppCompatActivity {
         calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
         student=findViewById(R.id.img_student);
     }
-}
+ }
