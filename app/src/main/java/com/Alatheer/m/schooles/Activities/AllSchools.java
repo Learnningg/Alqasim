@@ -61,7 +61,6 @@ public class AllSchools extends AppCompatActivity implements ViewData {
         adapter            = new AllSchools_Adapters(allSchoolModelList,this);
         recView_AllSchool.setAdapter(adapter);
 
-        /////////////////////////////////////////
 
         swipeRefresh.setColorSchemeResources(R.color.y400);
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
