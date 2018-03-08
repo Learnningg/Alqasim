@@ -14,11 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <ImageView
-        android:layout_width="240dp"
-        android:layout_height="240dp"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
         android:background="@drawable/login"
+        android:scaleType="centerCrop"
         android:layout_gravity="center"
-        >
+        android:layout_height="wrap_content">
 
     </ImageView>
 
@@ -36,14 +39,14 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="@dimen/small"
-                android:layout_height="@dimen/small"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:src="@drawable/teacher" />
 
             <ImageView
-                android:layout_width="@dimen/m"
-                android:layout_height="@dimen/small"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="140dp"
                 android:src="@drawable/employee" />
