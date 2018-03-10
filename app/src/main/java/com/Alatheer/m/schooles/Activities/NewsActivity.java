@@ -8,9 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.Alatheer.m.schooles.Adapters.All_News_Adapter;
 import com.Alatheer.m.schooles.Models.News_Model;
@@ -18,7 +20,12 @@ import com.Alatheer.m.schooles.Models.School_Fees_Model;
 import com.Alatheer.m.schooles.R;
 import com.Alatheer.m.schooles.Services.ServicesApi;
 import com.Alatheer.m.schooles.Services.Service;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONArray;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +41,7 @@ public class NewsActivity extends AppCompatActivity {
     private ProgressBar progBar;
     private LinearLayout nodata_container;
     private SwipeRefreshLayout sr;
-    String school_id;
+    String class_room_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,31 +82,42 @@ public class NewsActivity extends AppCompatActivity {
         progBar.setVisibility(View.VISIBLE);
 
         Service service = ServicesApi.CreateApiClient().create(Service.class);
-        Call<List<News_Model>> call = service.getNewsData("4");
+
+
+        Call<List<News_Model>> call = service.getNewsData(class_room_id);
 
         call.enqueue(new Callback<List<News_Model>>() {
             @Override
             public void onResponse(Call<List<News_Model>> call, Response<List<News_Model>> response) {
 
-                newsList.clear();
-                newsList.addAll(response.body());
-                allNewsAdapter.notifyDataSetChanged();
-                if (newsList.size()>0)
-                {
-                    progBar.setVisibility(View.GONE);
-                    sr.setRefreshing(false);
+                if (response.isSuccessful()) {
+                    Toast.makeText(NewsActivity.this, "gggggggggggg", Toast.LENGTH_SHORT).show();
+                    newsList.clear();
+                    newsList.addAll(response.body());
+                    allNewsAdapter.notifyDataSetChanged();
+                    if (newsList.size() > 0) {
+                        Toast.makeText(NewsActivity.this, "mmmmmmmmmmmmmmmm", Toast.LENGTH_SHORT).show();
 
-                }else
-                {
-                    progBar.setVisibility(View.GONE);
-                    nodata_container.setVisibility(View.VISIBLE);
-                    sr.setRefreshing(false);
+                        progBar.setVisibility(View.GONE);
+                        sr.setRefreshing(false);
+
+                    } else {
+                        progBar.setVisibility(View.GONE);
+                        nodata_container.setVisibility(View.VISIBLE);
+                        sr.setRefreshing(false);
+                        Toast.makeText(NewsActivity.this, "oooooooooooooo", Toast.LENGTH_SHORT).show();
+
+                    }
                 }
+
             }
 
             @Override
             public void onFailure(Call<List<News_Model>> call, Throwable t) {
+                Log.e("mmm", t.getMessage());
                 nodata_container.setVisibility(View.GONE);
+                Toast.makeText(NewsActivity.this, "kkkkkkkkkkkkkk", Toast.LENGTH_SHORT).show();
+
                 sr.setRefreshing(false);
 
 
@@ -112,9 +130,9 @@ public class NewsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent !=null)
         {
-            if(intent.hasExtra("school_id"))
+            if(intent.hasExtra("class_room_id"))
             {
-                school_id = intent.getStringExtra("school_id");
+                class_room_id = intent.getStringExtra("class_room_id");
             }
         }
     }

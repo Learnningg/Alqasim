@@ -49,9 +49,9 @@ News_Model Model;
         Model=news.get(position);
         holder.linearLayout.setTag(position);
 
-        holder.title.setText(Model.getnews_title());
-        holder.desc.setText(Model.getnews_content());
-        Picasso.with(context).load("http://nsqapp.anwaralfyaha.com/"+Model.getimage_name()).into(holder.image);
+        holder.title.setText(Model.getNewsTitle());
+        holder.desc.setText(Model.getNewsContent());
+        Picasso.with(context).load("http://nsqapp.anwaralfyaha.com/"+Model.getImageName()).into(holder.image);
 
     }
 

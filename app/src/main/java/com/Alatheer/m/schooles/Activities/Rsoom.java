@@ -51,10 +51,8 @@ public class Rsoom extends AppCompatActivity {
     }
 
     private void initView() {
-
         sr = findViewById(R.id.sr);
         sr.setRefreshing(false);
-
         progBar = findViewById(R.id.progBar);
         progBar.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(this,R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
         nodata_container = findViewById(R.id.nodata_container);
@@ -108,6 +106,8 @@ public class Rsoom extends AppCompatActivity {
             public void onFailure(Call<List<School_Fees_Model>> call, Throwable t) {
                 nodata_container.setVisibility(View.GONE);
                 sr.setRefreshing(false);
+                progBar.setVisibility(View.GONE);
+
 
 
             }

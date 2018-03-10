@@ -24,5 +24,6 @@
     <string name="arrive">عن المدرسه</string>
     <string name="classes">الفصول</string>
     <string name="contact">تواصل معنا</string>
+    <string name="logout">خروج</string>
 
 </resources>

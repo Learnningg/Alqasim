@@ -13,7 +13,7 @@ import me.anwarshahriar.calligrapher.Calligrapher;
 
 public class ClassRoom extends AppCompatActivity implements View.OnClickListener {
 
-    CardView homework,absent,activity,honorboard,rate,table;
+    CardView homework,absent,activity,honorboard,rate,news;
     String class_room_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class ClassRoom extends AppCompatActivity implements View.OnClickListener
         activity   = findViewById(R.id.txt_activities);
         honorboard = findViewById(R.id.txt_honorbourd);
         rate       = findViewById(R.id.txt_rate);
-        table      = findViewById(R.id.txt_table);
+        news      = findViewById(R.id.txt_news);
 
 
 
@@ -51,7 +51,7 @@ public class ClassRoom extends AppCompatActivity implements View.OnClickListener
         activity  .setOnClickListener(this);
         honorboard.setOnClickListener(this);
         rate      .setOnClickListener(this);
-        table     .setOnClickListener(this);
+        news     .setOnClickListener(this);
 
     }
 
@@ -80,7 +80,10 @@ public class ClassRoom extends AppCompatActivity implements View.OnClickListener
                 intent5.putExtra("class_room_id",class_room_id);
                 startActivity(intent5);
                 break;
-            case R.id.txt_table:
+            case R.id.txt_news:
+                Intent intent6 = new Intent(this,NewsActivity.class);
+                intent6.putExtra("class_room_id",class_room_id);
+                startActivity(intent6);
                 break;
         }
     }

@@ -25,7 +25,7 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
     private Presenter presenter;
     private String school_id;
     private String student_code;
-    Button news,student_fees,school_fees,classes;
+    Button logout,student_fees,school_fees,classes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,12 +35,12 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
         getDataFromIntent();
 
 
-        news.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i2 = new Intent(Home.this, NewsActivity.class);
+            /*    Intent i2 = new Intent(Home.this, NewsActivity.class);
                 i2.putExtra("school_id",school_id);
-                startActivity(i2);
+                startActivity(i2);*/
             }
         });
         student_fees.setOnClickListener(new View.OnClickListener() {
@@ -57,14 +57,6 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
             public void onClick(View view) {
                 presenter.DisplayAll_SubStages(school_id);
 
-            }
-        });
-
-        news.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Home.this,NewsActivity.class);
-                startActivity(i);
             }
         });
 
@@ -96,7 +88,7 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
 
-        news=findViewById(R.id.btn_news);
+        logout=findViewById(R.id.btn_logout);
         student_fees=findViewById(R.id.btn_student_fees);
         school_fees=findViewById(R.id.btn_school_fees);
         classes=findViewById(R.id.classes);
@@ -110,22 +102,6 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
     public void onItemClick(View view) {
 
 
-
-
-/*
-            switch (view.getId()) {
-
-                case R.id.activity:
-                       break;
-                case R.id.news:
-
-
-                case R.id.rsoom:
-
-
-                case R.id.absent:*/
-
-   // }
 }
 
     @Override

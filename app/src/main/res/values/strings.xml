@@ -23,4 +23,5 @@
     <string name="arrive">About Us</string>
     <string name="classes">Classes</string>
     <string name="contact">Contact Us</string>
+    <string name="logout">logout</string>
 </resources>
