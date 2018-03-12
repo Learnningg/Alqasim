@@ -20,16 +20,17 @@
       android:layout_height="180dp"
       android:orientation="horizontal">
       <Button
-
+          android:id="@+id/btn_news"
           android:layout_width="0dp"
           android:layout_height="150dp"
           android:layout_weight="1"
-          android:drawableBottom="@drawable/contact"
+          android:drawableBottom="@drawable/newspaper"
           android:background="@drawable/btn1"
           android:layout_margin="10dp"
           android:textColor="@color/white"
-          android:textSize="22sp"
-          android:text="@string/contact"/>
+          android:textSize="16sp"
+          android:paddingBottom="10dp"
+          android:text="@string/news"/>
       <Button
           android:id="@+id/btn_school_fees"
 
@@ -40,7 +41,9 @@
           android:background="@drawable/btn1"
           android:layout_margin="10dp"
           android:textColor="@color/white"
-          android:textSize="22sp"
+          android:textSize="16sp"
+          android:paddingBottom="10dp"
+
           android:text="@string/arrive"/>
 
   </LinearLayout>
@@ -55,8 +58,9 @@
         android:background="@drawable/btn1"
         android:layout_margin="10dp"
         android:textColor="@color/white"
-        android:textSize="29sp"
+        android:textSize="17sp"
         android:drawablePadding="30dp"
+        android:paddingLeft="10dp"
         android:text="@string/classes"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -72,7 +76,9 @@
             android:background="@drawable/btn1"
             android:layout_margin="10dp"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="16sp"
+            android:paddingBottom="10dp"
+
             android:text="@string/student_fees"/>
         <Button
             android:id="@+id/btn_logout"
@@ -83,7 +89,9 @@
             android:background="@drawable/btn1"
             android:layout_margin="10dp"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="16sp"
+            android:paddingBottom="10dp"
+
             android:text="@string/logout"/>
 
     </LinearLayout>

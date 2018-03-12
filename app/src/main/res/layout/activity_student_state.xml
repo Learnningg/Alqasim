@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back1"
-    tools:context="com.Alatheer.m.schooles.Activities.Rsoom">
+    tools:context="com.Alatheer.elashry.Faihaa.Activities.Rsoom">
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/sr"
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="لا توجد عروض لعرضها"
+            android:text="لا توجد تقييمات لعرضها"
             android:textSize="18sp"
             />
 

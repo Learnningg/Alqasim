@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Schools</string>
+    <string name="app_name">Faihaa Schools</string>
     <string name="absent"> absent</string>
     <string name="homework">home work</string>
     <string name="honorboard">honor board</string>
@@ -12,16 +12,22 @@
     <string name="student_fees">Student Fees</string>
     <string name="name">Name</string>
     <string name="classrooms_name">Class</string>
-    <string name="sub_stages_name">Stage</string>
+    <string name="sub_stages_name">SubStage</string>
     <string name="school_name">School</string>
-    <string name="transport_type">Transport</string>
-    <string name="payment_type">Payment</string>
+    <string name="transport_type">Transport type</string>
+    <string name="payment_type">Payment type</string>
     <string name="current_all_fees">All Fees</string>
-    <string name="current_remain">Remain</string>
-    <string name="current_paid">Paid</string>
+    <string name="current_remain">Remain Fees</string>
+    <string name="current_paid">Current Paid</string>
     <string name="news">News</string>
     <string name="arrive">About Us</string>
     <string name="classes">Classes</string>
     <string name="contact">Contact Us</string>
     <string name="logout">logout</string>
+    <string name="log_in">Login.....</string>
+    <string name="child_fees">children fees</string>
+    <string name="show_student_details">Details</string>
+    <string name="something_error">error something haywire</string>
+    <string name="details">Details</string>
+
 </resources>

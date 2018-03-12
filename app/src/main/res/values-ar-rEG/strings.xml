@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">المدارس</string>
+    <string name="app_name">مدارس انوار الفيحاء</string>
     <string name="absent">غياب الطلاب</string>
     <string name="homework">الواجبات</string>
     <string name="honorboard">لوحه الشرف</string>
@@ -25,5 +25,11 @@
     <string name="classes">الفصول</string>
     <string name="contact">تواصل معنا</string>
     <string name="logout">خروج</string>
+    <string name="log_in">تسجيل الدخول....</string>
+    <string name="child_fees">رسوم الابناء</string>
+    <string name="show_student_details">إضغط هنا لمعرفة التفاصيل</string>
+    <string name="something_error">خطأ</string>
+    <string name="details">التفاصيل</string>
+
 
 </resources>
