@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by ok on 29/01/2018.
  */
 
-public class News_Model implements Serializable{
+public class News_Model implements Serializable {
 
     private String id;
 
@@ -28,25 +28,13 @@ public class News_Model implements Serializable{
 
     private String school_name;
 
-    private String imageName;
+    private String image_name;
     private String message;
 
-    public News_Model(String id, String message) {
-        this.id = id;
-        this.message = message;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
     public News_Model() {
     }
 
-    public News_Model(String id, String schools_id, String news_date, String news_title, String news_content, String news_video, String branch_id, String id_news, String school_id, String school_name, String imageName, String message) {
+    public News_Model(String id, String schools_id, String news_date, String news_title, String news_content, String news_video, String branch_id, String id_news, String school_id, String school_name, String image_name, String message) {
         this.id = id;
         this.schools_id = schools_id;
         this.news_date = news_date;
@@ -57,7 +45,7 @@ public class News_Model implements Serializable{
         this.id_news = id_news;
         this.school_id = school_id;
         this.school_name = school_name;
-        this.imageName = imageName;
+        this.image_name = image_name;
         this.message = message;
     }
 
@@ -141,12 +129,19 @@ public class News_Model implements Serializable{
         this.school_name = school_name;
     }
 
-    public String getImageName() {
-        return imageName;
+    public String getImage_name() {
+        return image_name;
     }
 
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
+    public void setImage_name(String image_name) {
+        this.image_name = image_name;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
-

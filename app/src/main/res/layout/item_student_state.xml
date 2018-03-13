@@ -14,7 +14,8 @@
             android:layout_weight="1"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="@string/app_name"/>
+
+            />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -22,7 +23,7 @@
             android:textColor="#fff"
             android:gravity="center"
             android:background="@color/colorAccent"
-            android:text="ddddddddd"/>
+            android:text="@string/exam_name"/>
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"
@@ -40,7 +41,7 @@
             android:layout_weight="1"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="@string/app_name"/>
+            />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -48,7 +49,7 @@
             android:textColor="#fff"
             android:gravity="center"
             android:background="@color/colorAccent"
-            android:text="ddddddddd"/>
+            android:text="@string/std_name"/>
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"
@@ -66,7 +67,8 @@
             android:layout_weight="1"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="@string/app_name"/>
+
+            />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -74,7 +76,7 @@
             android:textColor="#fff"
             android:gravity="center"
             android:background="@color/colorAccent"
-            android:text="ddddddddd"/>
+            android:text="@string/sub_name"/>
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"
@@ -92,7 +94,7 @@
             android:layout_weight="1"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="@string/app_name"/>
+            />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -100,7 +102,7 @@
             android:textColor="#fff"
             android:gravity="center"
             android:background="@color/colorAccent"
-            android:text="ddddddddd"/>
+            android:text="@string/eval_degree"/>
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"

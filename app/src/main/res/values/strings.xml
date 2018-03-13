@@ -29,5 +29,9 @@
     <string name="show_student_details">Details</string>
     <string name="something_error">error something haywire</string>
     <string name="details">Details</string>
+    <string name="exam_name">Exam name</string>
+    <string name="std_name">Student name</string>
+    <string name="sub_name">subject name</string>
+    <string name="eval_degree">Degree</string>
 
 </resources>

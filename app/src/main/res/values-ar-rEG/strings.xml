@@ -30,6 +30,10 @@
     <string name="show_student_details">إضغط هنا لمعرفة التفاصيل</string>
     <string name="something_error">خطأ</string>
     <string name="details">التفاصيل</string>
+    <string name="exam_name">اسم الاختبار</string>
+    <string name="std_name">اسم الطالب</string>
+    <string name="sub_name">اسم المادة</string>
+    <string name="eval_degree">درجة الاختبار</string>
 
 
 </resources>

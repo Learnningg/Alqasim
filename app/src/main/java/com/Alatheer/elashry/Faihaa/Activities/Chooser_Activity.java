@@ -8,13 +8,14 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.Alatheer.elashry.Faihaa.R;
 
 import me.anwarshahriar.calligrapher.Calligrapher;
 
 public class Chooser_Activity extends AppCompatActivity {
-    ImageView student,employee,visitor,parent;
+    LinearLayout student,employee,visitor,parent;
     String id ,user_type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,7 @@ public class Chooser_Activity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent=new Intent(Chooser_Activity.this,WebViewEmployee.class);
+                intent.putExtra("user_type","employee");
                 startActivity(intent);
 
             }
@@ -75,6 +77,7 @@ public class Chooser_Activity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent=new Intent(Chooser_Activity.this,Home.class);
+                intent.putExtra("user_type","visitor");
                 startActivity(intent);
 
             }
@@ -94,10 +97,10 @@ public class Chooser_Activity extends AppCompatActivity {
     private void initView() {
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
-        student=findViewById(R.id.img_student);
-        employee=findViewById(R.id.img_employee);
-        visitor=findViewById(R.id.img_visitor);
-        parent = findViewById(R.id.img_parent);
+        student=findViewById(R.id.student);
+        employee=findViewById(R.id.employee);
+        visitor=findViewById(R.id.visitor);
+        parent = findViewById(R.id.parent);
 
     }
  }

@@ -2,7 +2,11 @@ package com.Alatheer.elashry.Faihaa.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +20,7 @@ import com.Alatheer.elashry.Faihaa.Activities.NewsActivity;
 import com.Alatheer.elashry.Faihaa.Models.News_Model;
 import com.Alatheer.elashry.Faihaa.R;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 
@@ -31,6 +36,7 @@ Context context;
     public static double longit;
     public static String adress;
     NewsActivity newsActivity;
+    private Target target;
     public All_News_Adapter(Context context, ArrayList<News_Model> news) {
         this.context = context;
         this.news = news;
@@ -86,6 +92,33 @@ Context context;
             title.setText(news_model.getNews_title());
             desc.setText(news_model.getNews_content());
             news_date.setText(news_model.getNews_date());
+
+            target = new Target() {
+                @Override
+                public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                    image.setImageBitmap(bitmap);
+                }
+
+                @Override
+                public void onBitmapFailed(Drawable errorDrawable) {
+
+                }
+
+                @Override
+                public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+                }
+            };
+
+            if (news_model.getImage_name()==null|| TextUtils.isEmpty(news_model.getImage_name())||news_model.getImage_name().equals("0"))
+            {
+                Picasso.with(context).load(R.drawable.logo).into(target);
+            }else
+                {
+                    Picasso.with(context).load(Uri.parse("http://anwaralfyaha.anwaralfyaha.com/uploads/images/"+news_model.getImage_name())).into(target);
+
+                }
+
         }
 
     }

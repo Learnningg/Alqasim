@@ -115,24 +115,28 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
         Intent intent = getIntent();
         if (intent !=null)
         {
-            user_type = intent.getStringExtra("user_type");
-            Log.e("usertype",user_type);
-
-            if(user_type.equals("student"))
+            if (intent.hasExtra("user_type"))
             {
-               // school_id = intent.getStringExtra("school_id");
-                student_code   = intent.getStringExtra("student_code");
-                user_type = "student";
-                Log.e("scode",student_code);
+                user_type = intent.getStringExtra("user_type");
+                Log.e("usertype",user_type);
 
-              //  Toast.makeText(this, ""+student_code, Toast.LENGTH_SHORT).show();
-            }else if (user_type.equals("parent"))
-            {
-                father_national_num = intent.getStringExtra("parent_code");
+                if(user_type.equals("student"))
+                {
+                    // school_id = intent.getStringExtra("school_id");
+                    student_code   = intent.getStringExtra("student_code");
+                    user_type = "student";
+                    Log.e("scode",student_code);
 
-                Log.e("pcode",""+father_national_num);
-                user_type = "parent";
+                    //  Toast.makeText(this, ""+student_code, Toast.LENGTH_SHORT).show();
+                }else if (user_type.equals("parent"))
+                {
+                    father_national_num = intent.getStringExtra("parent_code");
+
+                    Log.e("pcode",""+father_national_num);
+                    user_type = "parent";
+                }
             }
+
         }
     }
 

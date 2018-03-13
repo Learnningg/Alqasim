@@ -3,6 +3,7 @@ package com.Alatheer.elashry.Faihaa.Adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,14 +42,28 @@ public class All_Activities_Adapter extends RecyclerView.Adapter<All_Activities_
     }
 
     @Override
-    public void onBindViewHolder(Holder holder, int position) {
+    public void onBindViewHolder(final Holder holder, int position) {
         Model=actiitiesList.get(position);
-        holder.linearLayout.setTag(position);
-
         holder.title.setText(Model.getActivity_title());
         holder.content.setText(Model.getActivity_content());
         holder.date.setText(Model.getActivity_date());
-        Picasso.with(context).load("http://nsqapp.anwaralfyaha.com/"+Model.getImage_name()).into(holder.image);
+
+        if (Model.getImage_name()!=null || !TextUtils.isEmpty(Model.getImage_name())|| !Model.getImage_name().equals("0"))
+        {
+            Picasso.with(context).load("http://anwaralfyaha.anwaralfyaha.com/uploads/images/"+Model.getImage_name()).into(holder.image);
+
+        }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AllActivities_Model allActivities_model = actiitiesList.get(holder.getAdapterPosition());
+                Intent i = new Intent(context,DescActivity.class);
+                i.putExtra("activities_details",allActivities_model);
+                context.startActivity(i);
+
+            }
+        });
 
     }
 
@@ -57,10 +72,9 @@ public class All_Activities_Adapter extends RecyclerView.Adapter<All_Activities_
         return  actiitiesList.size();
     }
 
-    class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class Holder extends RecyclerView.ViewHolder{
         TextView title, content,date;
         ImageView image;
-        LinearLayout linearLayout;
 
         public Holder(View itemView) {
             super(itemView);
@@ -69,20 +83,8 @@ public class All_Activities_Adapter extends RecyclerView.Adapter<All_Activities_
             content=itemView.findViewById(R.id.txt_content);
             date=itemView.findViewById(R.id.txt_date);
             image=itemView.findViewById(R.id.img_activities);
-            linearLayout=itemView.findViewById(R.id.linear_activities);
-            linearLayout.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View view) {
-
-            int position = (int) view.getTag();
-
-
-            Intent i = new Intent(context,DescActivity.class);
-            context.startActivity(i);
-
 
         }
+
     }
 }

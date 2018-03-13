@@ -61,7 +61,6 @@ public class LoginParentActivity extends AppCompatActivity implements ViewData {
                 dialog.show();
                 String id2 = user_id.getText().toString();
                 presenter.Login(id2);
-                Toast.makeText(LoginParentActivity.this, ""+id2, Toast.LENGTH_SHORT).show();
 
             }
         });

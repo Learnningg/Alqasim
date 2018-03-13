@@ -33,8 +33,6 @@ public class HonorBoardStudentAdapter extends RecyclerView.Adapter<HonorBoardStu
     public void onBindViewHolder(Holder holder, int position) {
         mmodel = Array.get(position);
 
-        holder.lingrand.setTag(position);
-
         holder.student_name.setText(mmodel.getStudent_name());
         holder.student_degree.setText(mmodel.getDegree());
 
@@ -46,29 +44,20 @@ public class HonorBoardStudentAdapter extends RecyclerView.Adapter<HonorBoardStu
         return Array.size();
     }
 
-    class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class Holder extends RecyclerView.ViewHolder{
         TextView student_name, student_degree;
-        LinearLayout lingrand;
 
         public Holder(View itemView) {
             super(itemView);
 
             student_name = itemView.findViewById(R.id.txt_student_name);
             student_degree = itemView.findViewById(R.id.txt_student_degree);
-            lingrand = itemView.findViewById(R.id.lin_houner);
-            lingrand.setOnClickListener(this);
 
 
-        }
-
-        @Override
-        public void onClick(View view) {
-
-            int position = (int) view.getTag();
-
-            mmodel = Array.get(position);
 
         }
+
+
 
     }
 

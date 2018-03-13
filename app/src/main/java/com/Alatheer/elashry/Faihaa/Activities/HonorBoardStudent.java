@@ -61,14 +61,14 @@ public class HonorBoardStudent extends AppCompatActivity {
                 model.addAll( response.body());
 
 
-                if (model.get(0).getMessage().equals("no data")){
+                if (model.size()>0){
+                    adapter.notifyDataSetChanged();
                     progBar.setVisibility(View.GONE);
-                    nodata_container.setVisibility(View.VISIBLE);
                     sr.setRefreshing(false);
                    // Toast.makeText(Activities.this, "no activities", Toast.LENGTH_SHORT).show();
                 }else {
-                    adapter.notifyDataSetChanged();
                     progBar.setVisibility(View.GONE);
+                    nodata_container.setVisibility(View.VISIBLE);
                     sr.setRefreshing(false);
                 }
 
