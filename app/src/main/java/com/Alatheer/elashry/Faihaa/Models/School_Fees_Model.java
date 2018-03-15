@@ -10,12 +10,33 @@ public class School_Fees_Model {
     private String ar_name;
     private String tuition_fees;
     private String transfer_fees_1;
+    private Double school_google_lat;
+    private Double school_google_long;
     private String message;
 
-    public School_Fees_Model(String ar_name, String tuition_fees, String transfer_fees_1) {
+    public School_Fees_Model(String ar_name, String tuition_fees, String transfer_fees_1, Double school_google_lat, Double school_google_long, String message) {
         this.ar_name = ar_name;
         this.tuition_fees = tuition_fees;
         this.transfer_fees_1 = transfer_fees_1;
+        this.school_google_lat = school_google_lat;
+        this.school_google_long = school_google_long;
+        this.message = message;
+    }
+
+    public Double getSchool_google_lat() {
+        return school_google_lat;
+    }
+
+    public void setSchool_google_lat(Double school_google_lat) {
+        this.school_google_lat = school_google_lat;
+    }
+
+    public Double getSchool_google_long() {
+        return school_google_long;
+    }
+
+    public void setSchool_google_long(Double school_google_long) {
+        this.school_google_long = school_google_long;
     }
 
     public String getMessage() {

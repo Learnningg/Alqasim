@@ -34,6 +34,7 @@
     <string name="std_name">اسم الطالب</string>
     <string name="sub_name">اسم المادة</string>
     <string name="eval_degree">درجة الاختبار</string>
+    <string name="address">العنوان</string>
 
 
 </resources>

@@ -19,7 +19,7 @@
             android:layout_width="0dp"
             android:layout_weight=".8"
             android:layout_height="1dp"
-            android:background="#ffffff"
+            android:background="@color/colorPrimary"
             />
         <TextView
             android:id="@+id/stage_name"
@@ -28,7 +28,7 @@
             android:gravity="center_vertical|center_horizontal"
             android:textStyle="bold"
             android:textSize="20dp"
-            android:textColor="@color/white"
+            android:textColor="@color/colorPrimary"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             />
@@ -41,7 +41,7 @@
 
 
             android:layout_height="1dp"
-            android:background="#ffffff"
+            android:background="@color/colorPrimary"
             />
     </LinearLayout>
 <LinearLayout

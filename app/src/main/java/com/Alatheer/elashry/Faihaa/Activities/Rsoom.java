@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
@@ -28,12 +29,14 @@ import retrofit2.Response;
 
 public class Rsoom extends AppCompatActivity {
     RecyclerView recyclerView;
+    Button location;
     Fees_Adapter allNewsAdapter;
     ArrayList<School_Fees_Model> feesList ;
     private ProgressBar progBar;
     private LinearLayout nodata_container;
     private SwipeRefreshLayout sr;
     String school_id;
+    Double latitude, longitude;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,13 +46,22 @@ public class Rsoom extends AppCompatActivity {
         initView();
         getDataFromIntent();
         getDataFromServer();
-
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Rsoom.this,LocationActivity.class);
+                intent.putExtra("latitude",latitude);
+                intent.putExtra("longitude",longitude);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initView() {
         sr = findViewById(R.id.sr);
         sr.setRefreshing(false);
         progBar = findViewById(R.id.progBar);
+        location=findViewById(R.id.btn_location);
         progBar.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(this,R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
         nodata_container = findViewById(R.id.nodata_container);
         Calligrapher calligrapher = new Calligrapher(this);
@@ -68,6 +80,8 @@ public class Rsoom extends AppCompatActivity {
                 getDataFromServer();
             }
         });
+
+
     }
 
     private void getDataFromServer() {
@@ -87,9 +101,10 @@ public class Rsoom extends AppCompatActivity {
 
                 if (feesList.size()>0)
                 {
+                    latitude=response.body().get(0).getSchool_google_lat();
+                    longitude=response.body().get(0).getSchool_google_long();
                     progBar.setVisibility(View.GONE);
                     sr.setRefreshing(false);
-
                 }else
                     {
                         progBar.setVisibility(View.GONE);

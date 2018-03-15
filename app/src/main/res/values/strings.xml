@@ -33,5 +33,7 @@
     <string name="std_name">Student name</string>
     <string name="sub_name">subject name</string>
     <string name="eval_degree">Degree</string>
+    <string name="address">Location</string>
+    <string name="title_activity_location">Map</string>
 
 </resources>
