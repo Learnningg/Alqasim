@@ -14,7 +14,7 @@ import me.anwarshahriar.calligrapher.Calligrapher;
 
 public class ClassRoom extends AppCompatActivity implements View.OnClickListener {
 
-    CardView homework,absent,activity,honorboard,rate;
+    CardView homework,absent,activity,honorboard,rate,timetable;
     String class_room_id;
     String user_type;
     private AlertDialog.Builder builder;
@@ -56,7 +56,7 @@ public class ClassRoom extends AppCompatActivity implements View.OnClickListener
         activity   = findViewById(R.id.txt_activities);
         honorboard = findViewById(R.id.txt_honorbourd);
         rate       = findViewById(R.id.txt_rate);
-     //   news      = findViewById(R.id.txt_news);
+        timetable      = findViewById(R.id.txt_timetable);
 
 
 
@@ -65,7 +65,7 @@ public class ClassRoom extends AppCompatActivity implements View.OnClickListener
         activity  .setOnClickListener(this);
         honorboard.setOnClickListener(this);
         rate      .setOnClickListener(this);
-        //news     .setOnClickListener(this);
+        timetable     .setOnClickListener(this);
 
     }
 
@@ -79,7 +79,7 @@ public class ClassRoom extends AppCompatActivity implements View.OnClickListener
                 {
                     builder.show();
                 }else {
-                    Intent intent1 = new Intent(this,ActivityApsent.class);
+                    Intent intent1 = new Intent(this,ActivityHomeWork.class);
                     intent1.putExtra("class_room_id",class_room_id);
                     startActivity(intent1);
                 }
@@ -90,6 +90,16 @@ public class ClassRoom extends AppCompatActivity implements View.OnClickListener
                     builder.show();
                 }else {
                     Intent intent2 = new Intent(this,ActivityApsent.class);
+                    intent2.putExtra("class_room_id",class_room_id);
+                    startActivity(intent2);
+                }
+                break;
+            case R.id.txt_timetable:
+                if (user_type.equals("visitor"))
+                {
+                    builder.show();
+                }else {
+                    Intent intent2 = new Intent(this,ActivityTimeTableStudent.class);
                     intent2.putExtra("class_room_id",class_room_id);
                     startActivity(intent2);
                 }

@@ -59,7 +59,7 @@ public class Fees_Adapter extends RecyclerView.Adapter<Fees_Adapter.Holder>{
             super(itemView);
 
             name=itemView.findViewById(R.id.txt_ar_name);
-            tuition_fees=itemView.findViewById(R.id.txt_tuition_fees);
+            tuition_fees=itemView.findViewById(R.id.txt_transfer_fees);
             pay=itemView.findViewById(R.id.txt_pay);
             linearLayout=itemView.findViewById(R.id.linear_fees);
             linearLayout.setOnClickListener(this);

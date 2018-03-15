@@ -8,9 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.Alatheer.elashry.Faihaa.Adapters.AbsenceStudentAdapter;
 import com.Alatheer.elashry.Faihaa.Adapters.HomeWorkAdapter;
@@ -55,6 +57,7 @@ public class ActivityHomeWork extends AppCompatActivity {
         call.enqueue(new Callback<List<HomeWorkModel>>() {
             @Override
             public void onResponse(Call<List<HomeWorkModel>> call, Response<List<HomeWorkModel> > response) {
+
 
                 model.clear();
                 model.addAll( response.body());

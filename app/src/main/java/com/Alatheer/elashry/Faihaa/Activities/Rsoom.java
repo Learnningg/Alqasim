@@ -109,8 +109,6 @@ public class Rsoom extends AppCompatActivity {
             }
         });
     }
-
-
     private void getDataFromIntent() {
         Intent intent = getIntent();
         if (intent !=null)

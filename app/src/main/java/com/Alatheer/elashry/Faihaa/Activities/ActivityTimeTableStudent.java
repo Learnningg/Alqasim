@@ -1,6 +1,5 @@
 package com.Alatheer.elashry.Faihaa.Activities;
-//115311408, 1150695391,2147483647
-///  10178753278
+
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.support.v4.content.ContextCompat;
@@ -12,12 +11,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.Toast;
-import com.Alatheer.elashry.Faihaa.Adapters.All_Activities_Adapter;
-import com.Alatheer.elashry.Faihaa.Models.AllActivities_Model;
+
+import com.Alatheer.elashry.Faihaa.Adapters.HomeWorkAdapter;
+import com.Alatheer.elashry.Faihaa.Adapters.TimeTableAdapter;
+import com.Alatheer.elashry.Faihaa.Models.TimeTableStudentModel;
+import com.Alatheer.elashry.Faihaa.Models.TimeTableStudentModel;
 import com.Alatheer.elashry.Faihaa.R;
 import com.Alatheer.elashry.Faihaa.Services.Service;
 import com.Alatheer.elashry.Faihaa.Services.ServicesApi;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,58 +28,53 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Activities extends AppCompatActivity {
-    ArrayList<AllActivities_Model> model;
-    All_Activities_Adapter adapter;
+public class ActivityTimeTableStudent extends AppCompatActivity {
+
+    ArrayList<TimeTableStudentModel> model;
+    TimeTableAdapter adapter;
     RecyclerView recyclerView;
     private LinearLayoutManager mLayoutManager;
-    private String class_room_id;
+    String class_room_id;
     private ProgressBar progBar;
     private LinearLayout nodata_container;
     private SwipeRefreshLayout sr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activities);
-
-
-
+        setContentView(R.layout.activity_time_table_student);
         getDataFromIntent();
         initView();
         getDataFromServer();
     }
-
-
     private void getDataFromServer() {
 
+        progBar.setVisibility(View.VISIBLE);
 
         Service service = ServicesApi.CreateApiClient().create(Service.class);
-        Call<List<AllActivities_Model>> call = service.AllActivities(class_room_id);
-        call.enqueue(new Callback<List<AllActivities_Model>>() {
+        Call<List<TimeTableStudentModel>> call = service.GetTimeTableStudent(class_room_id);
+        call.enqueue(new Callback<List<TimeTableStudentModel>>() {
             @Override
-            public void onResponse(Call<List<AllActivities_Model>> call, Response<List<AllActivities_Model> > response) {
-
+            public void onResponse(Call<List<TimeTableStudentModel>> call, Response<List<TimeTableStudentModel> > response) {
 
                 model.clear();
                 model.addAll( response.body());
 
-                if (model.size()>0)
-                {
+
+                if (model.size()>0){
                     adapter.notifyDataSetChanged();
                     progBar.setVisibility(View.GONE);
                     sr.setRefreshing(false);
-
+                    // Toast.makeText(Activities.this, "no activities", Toast.LENGTH_SHORT).show();
                 }else {
                     progBar.setVisibility(View.GONE);
                     nodata_container.setVisibility(View.VISIBLE);
                     sr.setRefreshing(false);
                 }
 
-
             }
 
             @Override
-            public void onFailure(Call<List<AllActivities_Model>> call, Throwable t) {
+            public void onFailure(Call<List<TimeTableStudentModel>> call, Throwable t) {
                 nodata_container.setVisibility(View.GONE);
                 sr.setRefreshing(false);
 
@@ -87,7 +84,6 @@ public class Activities extends AppCompatActivity {
     }
 
     private void initView() {
-
         sr = findViewById(R.id.sr);
         sr.setRefreshing(false);
 
@@ -103,7 +99,7 @@ public class Activities extends AppCompatActivity {
         });
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
-        recyclerView = findViewById(R.id.recView_activities);
+        recyclerView = findViewById(R.id.rec_timetable);
         model = new ArrayList<>();
         mLayoutManager=new LinearLayoutManager(this);
         mLayoutManager.setReverseLayout(true);
@@ -112,7 +108,7 @@ public class Activities extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setHasFixedSize(true);
 
-        adapter = new All_Activities_Adapter(this, model);
+        adapter = new TimeTableAdapter(this, model);
         recyclerView.setAdapter(adapter);
     }
 
@@ -124,9 +120,11 @@ public class Activities extends AppCompatActivity {
             if (intent.hasExtra("class_room_id"))
             {
                 class_room_id = intent.getStringExtra("class_room_id");
-
             }
         }
 
     }
+
 }
+
+

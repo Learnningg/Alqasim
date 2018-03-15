@@ -14,6 +14,7 @@ import com.Alatheer.elashry.Faihaa.Models.School_Stages1;
 import com.Alatheer.elashry.Faihaa.Models.Student_Fees_Model;
 import com.Alatheer.elashry.Faihaa.Models.Student_State_Model;
 import com.Alatheer.elashry.Faihaa.Models.SubClasses;
+import com.Alatheer.elashry.Faihaa.Models.TimeTableStudentModel;
 
 import java.util.List;
 
@@ -77,4 +78,8 @@ public interface Service {
 
     @GET("Api/HomeworkStudent/{id_class_room}")
     Call<List<HomeWorkModel>> GetHomeworkStudent(@Path( "id_class_room") String id_class_room);
+
+    @GET("Api/TimeTableStudent/{id_class_room}")
+    Call<List<TimeTableStudentModel>> GetTimeTableStudent(@Path( "id_class_room") String id_class_room);
+
 }
