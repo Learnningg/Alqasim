@@ -11,9 +11,7 @@
         android:largeScreens="true"
         android:normalScreens="true"
         android:smallScreens="true"
-        android:xlargeScreens="true"
-
-        />
+        android:xlargeScreens="true" />
 
     <application
         android:allowBackup="true"
@@ -25,12 +23,19 @@
         <activity
             android:name=".Activities.Splash"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".Activities.NewsActivity"  android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.DescActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.SafofActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.MainActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.NewsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.DescActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Activities.SafofActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.Chooser_Activity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -40,30 +45,57 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.AllSchools" android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.LoginActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.AllSchools"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.Home"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.Student_State" android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.SubClassesActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.ClassRoom" android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.HonorBoardStudent" android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.Activities" android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.Rsoom" android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.Student_Fees" android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.WebViewEmployee" android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.LoginParentActivity" android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Activities.Student_State"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.SubClassesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ClassRoom"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.HonorBoardStudent"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Rsoom"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Student_Fees"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.WebViewEmployee"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.LoginParentActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.ChildrenActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Activities.ChildrenFeesDetails"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.NewsDtailsActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait"
-            />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Activities.NewsDtailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Activities.ActivityApsent" />
+        <activity android:name=".Activities.ActivityHomeWork"></activity>
     </application>
 
 </manifest>

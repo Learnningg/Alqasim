@@ -1,8 +1,10 @@
 package com.Alatheer.elashry.Faihaa.Services;
 
+import com.Alatheer.elashry.Faihaa.Models.AbsenceModel;
 import com.Alatheer.elashry.Faihaa.Models.AllActivities_Model;
 import com.Alatheer.elashry.Faihaa.Models.AllSchoolModel;
 import com.Alatheer.elashry.Faihaa.Models.ChildrenModel;
+import com.Alatheer.elashry.Faihaa.Models.HomeWorkModel;
 import com.Alatheer.elashry.Faihaa.Models.HonerModel;
 import com.Alatheer.elashry.Faihaa.Models.LoginModel;
 import com.Alatheer.elashry.Faihaa.Models.News_Model;
@@ -68,10 +70,11 @@ public interface Service {
     Call<Student_Fees_Model> GetStudentFees(@Path( "student_code") String student_code);
 
     @GET("Api/ParentsStudentFees/{father_national_num}")
-    Call<Student_Fees_Model> GetParentsStudentFees(@Path( "father_national_num") String father_national_num);
-
-    @GET("Api/ParentsStudentFees/{father_national_num}")
     Call<List<ChildrenModel>> DisplayChildrenDetails(@Path("father_national_num") String father_national_num);
 
+    @GET("Api/AbsenceStudent/{id_class_room}")
+    Call<List<AbsenceModel>> GetAbsenceStudent(@Path( "id_class_room") String id_class_room);
 
+    @GET("Api/HomeworkStudent/{id_class_room}")
+    Call<List<HomeWorkModel>> GetHomeworkStudent(@Path( "id_class_room") String id_class_room);
 }

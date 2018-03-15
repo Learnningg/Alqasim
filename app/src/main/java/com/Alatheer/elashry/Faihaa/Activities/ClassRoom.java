@@ -78,12 +78,20 @@ public class ClassRoom extends AppCompatActivity implements View.OnClickListener
                 if (user_type.equals("visitor"))
                 {
                     builder.show();
+                }else {
+                    Intent intent1 = new Intent(this,ActivityApsent.class);
+                    intent1.putExtra("class_room_id",class_room_id);
+                    startActivity(intent1);
                 }
                 break;
             case R.id.txt_absent:
                 if (user_type.equals("visitor"))
                 {
                     builder.show();
+                }else {
+                    Intent intent2 = new Intent(this,ActivityApsent.class);
+                    intent2.putExtra("class_room_id",class_room_id);
+                    startActivity(intent2);
                 }
                 break;
             case R.id.txt_activities:
