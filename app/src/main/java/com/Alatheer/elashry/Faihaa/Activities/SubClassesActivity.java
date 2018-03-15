@@ -22,6 +22,7 @@ public class SubClassesActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager manager;
     private RecyclerView.Adapter adapter;
     private List<SubClasses> subClassesList;
+    private String user_type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,7 @@ public class SubClassesActivity extends AppCompatActivity {
             if (intent.hasExtra("subClassesList"))
             {
                 subClassesList = (List<SubClasses>) intent.getSerializableExtra("subClassesList");
+                user_type = intent.getStringExtra("user_type");
                 UpdateUi(subClassesList);
             }
         }
@@ -64,6 +66,7 @@ public class SubClassesActivity extends AppCompatActivity {
         SubClasses subClasses =subClassesList.get(pos);
         Intent intent = new Intent(this,ClassRoom.class);
         intent.putExtra("class_room_id",subClasses.getId_class_room());
+        intent.putExtra("user_type",user_type);
         startActivity(intent);
     }
 }

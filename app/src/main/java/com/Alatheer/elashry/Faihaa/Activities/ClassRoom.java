@@ -1,6 +1,8 @@
 package com.Alatheer.elashry.Faihaa.Activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -14,12 +16,24 @@ public class ClassRoom extends AppCompatActivity implements View.OnClickListener
 
     CardView homework,absent,activity,honorboard,rate;
     String class_room_id;
+    String user_type;
+    private AlertDialog.Builder builder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_room);
         initView();
         getDataFromIntent();
+        builder = new AlertDialog.Builder(this);
+        builder.setMessage("هذه الخدمة غير متاحة لك");
+        builder.setPositiveButton("إلغاء", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                AlertDialog alertDialog = builder.create();
+                alertDialog.dismiss();
+            }
+        });
+        builder.create();
     }
 
     private void getDataFromIntent() {
@@ -29,6 +43,7 @@ public class ClassRoom extends AppCompatActivity implements View.OnClickListener
             if (intent.hasExtra("class_room_id"))
             {
                 class_room_id = intent.getStringExtra("class_room_id");
+                user_type = intent.getStringExtra("user_type");
             }
         }
     }
@@ -60,9 +75,16 @@ public class ClassRoom extends AppCompatActivity implements View.OnClickListener
         switch (view.getId())
         {
             case R.id.txt_homework:
-
+                if (user_type.equals("visitor"))
+                {
+                    builder.show();
+                }
                 break;
             case R.id.txt_absent:
+                if (user_type.equals("visitor"))
+                {
+                    builder.show();
+                }
                 break;
             case R.id.txt_activities:
                 Intent intent3 = new Intent(this,Activities.class);

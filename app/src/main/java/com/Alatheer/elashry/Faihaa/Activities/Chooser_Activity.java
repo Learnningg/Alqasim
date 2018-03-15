@@ -46,7 +46,6 @@ public class Chooser_Activity extends AppCompatActivity {
                 intent.putExtra("user_type",user_type);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-
                 finish();
             }
 
@@ -57,7 +56,9 @@ public class Chooser_Activity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent=new Intent(Chooser_Activity.this,LoginActivity.class);
+                intent.putExtra("user_type","student");
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -69,6 +70,7 @@ public class Chooser_Activity extends AppCompatActivity {
                 Intent intent=new Intent(Chooser_Activity.this,WebViewEmployee.class);
                 intent.putExtra("user_type","employee");
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -79,6 +81,7 @@ public class Chooser_Activity extends AppCompatActivity {
                 Intent intent=new Intent(Chooser_Activity.this,Home.class);
                 intent.putExtra("user_type","visitor");
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -87,7 +90,9 @@ public class Chooser_Activity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent=new Intent(Chooser_Activity.this,LoginParentActivity.class);
+                intent.putExtra("user_type","parent");
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -103,4 +108,5 @@ public class Chooser_Activity extends AppCompatActivity {
         parent = findViewById(R.id.parent);
 
     }
+
  }

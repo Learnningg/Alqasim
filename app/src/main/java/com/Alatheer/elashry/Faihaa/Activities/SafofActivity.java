@@ -32,6 +32,7 @@ public class SafofActivity extends AppCompatActivity implements ViewData {
     private TextView stage_name;
     private List<SubStages> subStages;
     private Presenter presenter;
+    private String user_type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +62,7 @@ public class SafofActivity extends AppCompatActivity implements ViewData {
             if (intent.hasExtra("schools_stages"))
             {
                 school_stages = (Schools_Stages) intent.getSerializableExtra("schools_stages");
+                user_type = intent.getStringExtra("user_type");
                 UpdateUi(school_stages);
 
             }
@@ -87,6 +89,8 @@ public class SafofActivity extends AppCompatActivity implements ViewData {
 
         Intent intent = new Intent(SafofActivity.this,SubClassesActivity.class);
         intent.putExtra("subClassesList", (Serializable) subClassesList);
+        intent.putExtra("user_type",user_type);
+
         startActivity(intent);
 
     }

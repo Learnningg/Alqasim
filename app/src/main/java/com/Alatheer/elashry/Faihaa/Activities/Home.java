@@ -1,7 +1,9 @@
 package com.Alatheer.elashry.Faihaa.Activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +32,7 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
     Button logout,student_fees,school_fees,classes,news;
     private Preferense preferense;
     private String user_type;
+    private AlertDialog.Builder builder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,13 +42,23 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
         initView();
         getDataFromIntent();
 
+        builder = new AlertDialog.Builder(this);
+        builder.setMessage("هذه الخدمة غير متاحة لك");
+        builder.setPositiveButton("إلغاء", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                AlertDialog alertDialog = builder.create();
+                alertDialog.dismiss();
+            }
+        });
+        builder.create();
+
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            /*    Intent i2 = new Intent(Home.this, NewsActivity.class);
-                i2.putExtra("school_id",school_id);
-                startActivity(i2);*/
+
             if (user_type.equals("student"))
             {
                 preferense.clear();
@@ -57,6 +70,12 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
             {
                 preferense.clear();
 
+                Intent intent = new Intent(Home.this, Chooser_Activity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }else if (user_type.equals("visitor"))
+            {
                 Intent intent = new Intent(Home.this, Chooser_Activity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -81,6 +100,9 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
                     intent.putExtra("father_national_num",father_national_num);
                     startActivity(intent);
                     //student
+                }else if (user_type.equals("visitor"))
+                {
+                    builder.show();
                 }
 
             }
@@ -135,6 +157,7 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
                     Log.e("pcode",""+father_national_num);
                     user_type = "parent";
                 }
+
             }
 
         }
@@ -172,6 +195,7 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
         Schools_Stages schools_stages = schools_stagesList.get(0);
         Intent intent = new Intent(Home.this,SafofActivity.class);
         intent.putExtra("schools_stages",schools_stages);
+        intent.putExtra("user_type",user_type);
         startActivity(intent);
 
     }
@@ -189,5 +213,6 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_HOME);
         startActivity(intent);
+        finish();
     }
 }
