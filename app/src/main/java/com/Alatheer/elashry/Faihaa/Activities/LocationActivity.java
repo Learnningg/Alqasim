@@ -3,6 +3,7 @@ package com.Alatheer.elashry.Faihaa.Activities;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.Alatheer.elashry.Faihaa.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -35,6 +36,8 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
         latitude=  intent.getDoubleExtra("latitude",1.1);
         longitude= intent.getDoubleExtra("longitude",1.1);
         LatLng school = new LatLng(latitude, longitude);
+        Toast.makeText(this, ""+latitude+longitude, Toast.LENGTH_SHORT).show();
+
         mMap.addMarker(new MarkerOptions().position(school).title("Marker in school"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(school,13));
     }

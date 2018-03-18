@@ -7,6 +7,7 @@ package com.Alatheer.elashry.Faihaa.Models;
 
 public class School_Fees_Model {
 
+    private String school_name;
     private String ar_name;
     private String tuition_fees;
     private String transfer_fees_1;
@@ -14,13 +15,22 @@ public class School_Fees_Model {
     private Double school_google_long;
     private String message;
 
-    public School_Fees_Model(String ar_name, String tuition_fees, String transfer_fees_1, Double school_google_lat, Double school_google_long, String message) {
+    public School_Fees_Model(String school_name, String ar_name, String tuition_fees, String transfer_fees_1, Double school_google_lat, Double school_google_long, String message) {
+        this.school_name = school_name;
         this.ar_name = ar_name;
         this.tuition_fees = tuition_fees;
         this.transfer_fees_1 = transfer_fees_1;
         this.school_google_lat = school_google_lat;
         this.school_google_long = school_google_long;
         this.message = message;
+    }
+
+    public String getSchool_name() {
+        return school_name;
+    }
+
+    public void setSchool_name(String school_name) {
+        this.school_name = school_name;
     }
 
     public Double getSchool_google_lat() {

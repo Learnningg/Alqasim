@@ -4,40 +4,55 @@ package com.Alatheer.elashry.Faihaa.Models;
 
 public class AllSchoolModel {
 
-    private String id;
+    private String id_school;
     private String branch_id_fk;
     private String school_name;
     private String ministerial_number;
     private String phone;
     private String fax;
     private String email;
-    private String publisher;
-    private String date;
-    private String date_s;
+    private String school_google_long;
+    private String school_google_lat;
 
 
     public AllSchoolModel() {
     }
 
-    public AllSchoolModel(String id, String branch_id_fk, String school_name, String ministerial_number, String phone, String fax, String email, String publisher, String date, String date_s) {
-        this.id = id;
+
+    public AllSchoolModel(String id_school, String branch_id_fk, String school_name, String ministerial_number, String phone, String fax, String email, String school_google_long, String school_google_lat) {
+        this.id_school = id_school;
         this.branch_id_fk = branch_id_fk;
         this.school_name = school_name;
         this.ministerial_number = ministerial_number;
         this.phone = phone;
         this.fax = fax;
         this.email = email;
-        this.publisher = publisher;
-        this.date = date;
-        this.date_s = date_s;
+        this.school_google_long = school_google_long;
+        this.school_google_lat = school_google_lat;
     }
 
-    public String getId() {
-        return id;
+    public String getSchool_google_long() {
+        return school_google_long;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setSchool_google_long(String school_google_long) {
+        this.school_google_long = school_google_long;
+    }
+
+    public String getSchool_google_lat() {
+        return school_google_lat;
+    }
+
+    public void setSchool_google_lat(String school_google_lat) {
+        this.school_google_lat = school_google_lat;
+    }
+
+    public String getId_school() {
+        return id_school;
+    }
+
+    public void setId_school(String id_school) {
+        this.id_school = id_school;
     }
 
     public String getBranch_id_fk() {
@@ -88,27 +103,4 @@ public class AllSchoolModel {
         this.email = email;
     }
 
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getDate_s() {
-        return date_s;
-    }
-
-    public void setDate_s(String date_s) {
-        this.date_s = date_s;
-    }
 }

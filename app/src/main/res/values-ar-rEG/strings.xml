@@ -35,6 +35,9 @@
     <string name="sub_name">اسم المادة</string>
     <string name="eval_degree">درجة الاختبار</string>
     <string name="address">العنوان</string>
+    <string name="school_fees">رسوم المدرسه</string>
+    <string name="name_school">اسم المدرسه</string>
+    <string name="school_trans">رسوم النقل</string>
 
 
 </resources>

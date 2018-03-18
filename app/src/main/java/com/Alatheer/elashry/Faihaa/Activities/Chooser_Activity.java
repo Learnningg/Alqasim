@@ -78,7 +78,7 @@ public class Chooser_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent=new Intent(Chooser_Activity.this,Home.class);
+                Intent intent=new Intent(Chooser_Activity.this,AllSchools.class);
                 intent.putExtra("user_type","visitor");
                 startActivity(intent);
                 finish();

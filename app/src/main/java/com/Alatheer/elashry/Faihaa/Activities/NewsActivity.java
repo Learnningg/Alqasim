@@ -35,7 +35,7 @@ public class NewsActivity extends AppCompatActivity {
     private ProgressBar progBar;
     private LinearLayout nodata_container;
     private SwipeRefreshLayout sr;
-    String school_id;
+    String school_id,user_type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,42 +78,83 @@ public class NewsActivity extends AppCompatActivity {
         Service service = ServicesApi.CreateApiClient().create(Service.class);
 
 
-        Call<List<News_Model>> call = service.getNewsData("1");
+        if (user_type.equals("visitor")){
+            Call<List<News_Model>> call = service.getNewsData(school_id);
+            call.enqueue(new Callback<List<News_Model>>() {
+                @Override
+                public void onResponse(Call<List<News_Model>> call, Response<List<News_Model>> response) {
 
-        call.enqueue(new Callback<List<News_Model>>() {
-            @Override
-            public void onResponse(Call<List<News_Model>> call, Response<List<News_Model>> response) {
+                    if (response.isSuccessful()) {
+                        newsList.clear();
+                        newsList.addAll(response.body());
+                        allNewsAdapter.notifyDataSetChanged();
+                        if (newsList.size() > 0) {
 
-                if (response.isSuccessful()) {
-                    newsList.clear();
-                    newsList.addAll(response.body());
-                    allNewsAdapter.notifyDataSetChanged();
-                    if (newsList.size() > 0) {
+                            progBar.setVisibility(View.GONE);
+                            sr.setRefreshing(false);
 
-                        progBar.setVisibility(View.GONE);
-                        sr.setRefreshing(false);
+                        } else {
+                            progBar.setVisibility(View.GONE);
+                            nodata_container.setVisibility(View.VISIBLE);
+                            sr.setRefreshing(false);
 
-                    } else {
-                        progBar.setVisibility(View.GONE);
-                        nodata_container.setVisibility(View.VISIBLE);
-                        sr.setRefreshing(false);
-
+                        }
                     }
+
                 }
 
-            }
+                @Override
+                public void onFailure(Call<List<News_Model>> call, Throwable t) {
+                    Log.e("mmm", t.getMessage());
+                    nodata_container.setVisibility(View.GONE);
+                    Toast.makeText(NewsActivity.this, getString(R.string.something_error), Toast.LENGTH_SHORT).show();
 
-            @Override
-            public void onFailure(Call<List<News_Model>> call, Throwable t) {
-                Log.e("mmm", t.getMessage());
-                nodata_container.setVisibility(View.GONE);
-                Toast.makeText(NewsActivity.this, getString(R.string.something_error), Toast.LENGTH_SHORT).show();
-
-                sr.setRefreshing(false);
+                    sr.setRefreshing(false);
 
 
-            }
-        });
+                }
+            });
+        }else {
+
+            Call<List<News_Model>> call = service.getNewsData("1");
+            call.enqueue(new Callback<List<News_Model>>() {
+                @Override
+                public void onResponse(Call<List<News_Model>> call, Response<List<News_Model>> response) {
+
+                    if (response.isSuccessful()) {
+                        newsList.clear();
+                        newsList.addAll(response.body());
+                        allNewsAdapter.notifyDataSetChanged();
+                        if (newsList.size() > 0) {
+
+                            progBar.setVisibility(View.GONE);
+                            sr.setRefreshing(false);
+
+                        } else {
+                            progBar.setVisibility(View.GONE);
+                            nodata_container.setVisibility(View.VISIBLE);
+                            sr.setRefreshing(false);
+
+                        }
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<List<News_Model>> call, Throwable t) {
+                    Log.e("mmm", t.getMessage());
+                    nodata_container.setVisibility(View.GONE);
+                    Toast.makeText(NewsActivity.this, getString(R.string.something_error), Toast.LENGTH_SHORT).show();
+
+                    sr.setRefreshing(false);
+
+
+                }
+            });
+        }
+
+
+
     }
 
 
@@ -124,6 +165,7 @@ public class NewsActivity extends AppCompatActivity {
             if(intent.hasExtra("school_id"))
             {
                 school_id = intent.getStringExtra("school_id");
+                user_type=intent.getStringExtra("user_type");
             }
         }
     }

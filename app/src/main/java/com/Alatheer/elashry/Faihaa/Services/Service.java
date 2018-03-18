@@ -55,6 +55,9 @@ public interface Service {
     @GET("Api/AllActivities/{id_class_room}")
     Call<List<AllActivities_Model>> AllActivities(@Path( "id_class_room") String id_class_room);
 
+    @GET("Api/OneSchoolActivities/{id_school}")
+    Call<List<AllActivities_Model>> GetSchoolActivities(@Path( "id_school") String id_school);
+
     @FormUrlEncoded
     @POST("Api/Login")
     Call<LoginModel> Login(@Field("student_national_num") String student_national_num);
@@ -81,5 +84,8 @@ public interface Service {
 
     @GET("Api/TimeTableStudent/{id_class_room}")
     Call<List<TimeTableStudentModel>> GetTimeTableStudent(@Path( "id_class_room") String id_class_room);
+
+    @GET("Api/OneSchoolFees/{id_school}")
+    Call<List<School_Fees_Model>> GetSchoolFeesData(@Path( "id_school") String id_school);
 
 }

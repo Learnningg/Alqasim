@@ -35,5 +35,8 @@
     <string name="eval_degree">Degree</string>
     <string name="address">Location</string>
     <string name="title_activity_location">Map</string>
+    <string name="school_fees">school fees</string>
+    <string name="name_school">school name</string>
+    <string name="school_trans">transport fees</string>
 
 </resources>

@@ -8,6 +8,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -34,6 +35,7 @@ public class AllSchools extends AppCompatActivity implements ViewData {
     private SwipeRefreshLayout swipeRefresh;
     private ProgressBar progressBar;
 
+    private String user_type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,21 @@ public class AllSchools extends AppCompatActivity implements ViewData {
         setContentView(R.layout.activity_all_schools);
         presenter = new PresenterImp(this,this);
         initView();
+        getDataFromIntent();
+    }
+
+    private void getDataFromIntent() {
+
+        Intent intent = getIntent();
+        if (intent !=null)
+        {
+            if (intent.hasExtra("user_type"))
+            {
+                user_type = intent.getStringExtra("user_type");
+
+            }
+
+        }
     }
 
     private void initView() {
@@ -90,10 +107,24 @@ public class AllSchools extends AppCompatActivity implements ViewData {
 
     public void setPos(int pos)
     {
-        String school_id = allSchoolModelList.get(pos).getId();
+        String school_id = allSchoolModelList.get(pos).getId_school();
+        String phone = allSchoolModelList.get(pos).getPhone();
+        String fax = allSchoolModelList.get(pos).getFax();
+        String email = allSchoolModelList.get(pos).getEmail();
+        String school_google_long = allSchoolModelList.get(pos).getSchool_google_long();
+        String school_google_lat = allSchoolModelList.get(pos).getSchool_google_lat();
+        String school_name = allSchoolModelList.get(pos).getSchool_name();
         //Intent intent = new Intent(this,Chooser_Activity.class);
-        Intent intent = new Intent(this,LoginActivity.class);
-        intent.putExtra("school_id",school_id);
+        Intent intent = new Intent(this,ActivityVisitorHome.class);
+        intent.putExtra("school_id"         ,school_id);
+        intent.putExtra("phone"             ,phone);
+        intent.putExtra("fax"               ,fax);
+        intent.putExtra("email"             ,email);
+        intent.putExtra("school_google_long",school_google_long);
+        intent.putExtra("school_google_lat" ,school_google_lat);
+        intent.putExtra("school_name"       ,school_name);
+
+        intent.putExtra("user_type",user_type);
         startActivity(intent);
     }
 

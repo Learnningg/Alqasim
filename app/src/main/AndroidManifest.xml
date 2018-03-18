@@ -119,7 +119,11 @@
 
         <activity
             android:name=".Activities.LocationActivity"
-            android:label="@string/title_activity_location"></activity>
+            android:label="@string/title_activity_location" />
+        <activity android:name=".Activities.ActivityVisitorHome" />
+        <activity android:name=".Activities.SchoolActivity" />
+        <activity android:name=".Activities.ActivityAboutUs" />
+        <activity android:name=".Activities.ActivitySchoolFees"></activity>
     </application>
 
 </manifest>
