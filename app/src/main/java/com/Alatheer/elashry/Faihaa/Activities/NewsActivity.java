@@ -76,8 +76,7 @@ public class NewsActivity extends AppCompatActivity {
         progBar.setVisibility(View.VISIBLE);
 
         Service service = ServicesApi.CreateApiClient().create(Service.class);
-
-
+Log.e("mmmmm",user_type);
         if (user_type.equals("visitor")){
             Call<List<News_Model>> call = service.getNewsData(school_id);
             call.enqueue(new Callback<List<News_Model>>() {
@@ -162,10 +161,11 @@ public class NewsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent !=null)
         {
+            user_type=intent.getStringExtra("user_type");
+
             if(intent.hasExtra("school_id"))
             {
                 school_id = intent.getStringExtra("school_id");
-                user_type=intent.getStringExtra("user_type");
             }
         }
     }

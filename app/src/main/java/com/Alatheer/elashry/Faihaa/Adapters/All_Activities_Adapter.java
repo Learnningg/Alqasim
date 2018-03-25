@@ -24,8 +24,8 @@ import java.util.ArrayList;
  */
 
 public class All_Activities_Adapter extends RecyclerView.Adapter<All_Activities_Adapter.Holder>{
-   Context context;
-   AllActivities_Model Model;
+    Context context;
+    AllActivities_Model Model;
     ArrayList<AllActivities_Model> actiitiesList;
 
 
@@ -61,12 +61,9 @@ public class All_Activities_Adapter extends RecyclerView.Adapter<All_Activities_
                 Intent i = new Intent(context,DescActivity.class);
                 i.putExtra("activities_details",allActivities_model);
                 context.startActivity(i);
-
             }
-        });
-
+        }) ;
     }
-
     @Override
     public int getItemCount() {
         return  actiitiesList.size();
@@ -76,9 +73,8 @@ public class All_Activities_Adapter extends RecyclerView.Adapter<All_Activities_
         TextView title, content,date;
         ImageView image;
 
-        public Holder(View itemView) {
+         Holder(View itemView) {
             super(itemView);
-
             title=itemView.findViewById(R.id.txt_title);
             content=itemView.findViewById(R.id.txt_content);
             date=itemView.findViewById(R.id.txt_date);

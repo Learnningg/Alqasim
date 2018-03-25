@@ -38,5 +38,6 @@
     <string name="school_fees">school fees</string>
     <string name="name_school">school name</string>
     <string name="school_trans">transport fees</string>
+    <string name="copyright">CopyRight</string>
 
 </resources>

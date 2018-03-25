@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.Alatheer.elashry.Faihaa.MVP.Display_AllSubStages.Presenter;
@@ -33,14 +34,16 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
     private Preferense preferense;
     private String user_type;
     private AlertDialog.Builder builder;
+    ImageView copy;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         presenter = new PresenterImp(this,this);
         preferense = new Preferense(this);
-        initView();
         getDataFromIntent();
+
+        initView();
 
         builder = new AlertDialog.Builder(this);
         builder.setMessage("هذه الخدمة غير متاحة لك");
@@ -111,7 +114,6 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
             @Override
             public void onClick(View view) {
                 presenter.DisplayAll_SubStages(school_id);
-
             }
         });
 
@@ -127,7 +129,15 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
             @Override
             public void onClick(View view) {
                 Intent i3= new Intent(Home.this, NewsActivity.class);
-            //    i3.putExtra("school_id",school_id);
+                i3.putExtra("user_type",user_type);
+                startActivity(i3);
+            }
+        });
+
+        copy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i3= new Intent(Home.this, CopyRight.class);
                 startActivity(i3);
             }
         });
@@ -172,6 +182,7 @@ public class Home extends AppCompatActivity  implements ViewData, CircleLayout.O
         school_fees=findViewById(R.id.btn_school_fees);
         classes=findViewById(R.id.classes);
         news=findViewById(R.id.btn_news);
+        copy=findViewById(R.id.copyRight);
 
        // circleLayout=findViewById(R.id.circle);
        // circleLayout.setOnItemClickListener(this);

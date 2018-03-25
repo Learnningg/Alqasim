@@ -48,6 +48,7 @@ public class ActivityHomeWork extends AppCompatActivity {
         initView();
         getDataFromServer();
     }
+
     private void getDataFromServer() {
 
         progBar.setVisibility(View.VISIBLE);
@@ -80,8 +81,6 @@ public class ActivityHomeWork extends AppCompatActivity {
             public void onFailure(Call<List<HomeWorkModel>> call, Throwable t) {
                 nodata_container.setVisibility(View.GONE);
                 sr.setRefreshing(false);
-
-
             }
         });
     }

@@ -11,15 +11,15 @@ public class AllSchoolModel {
     private String phone;
     private String fax;
     private String email;
-    private String school_google_long;
-    private String school_google_lat;
+    private Double school_google_long;
+    private Double school_google_lat;
 
 
     public AllSchoolModel() {
     }
 
 
-    public AllSchoolModel(String id_school, String branch_id_fk, String school_name, String ministerial_number, String phone, String fax, String email, String school_google_long, String school_google_lat) {
+    public AllSchoolModel(String id_school, String branch_id_fk, String school_name, String ministerial_number, String phone, String fax, String email, Double school_google_long, Double school_google_lat) {
         this.id_school = id_school;
         this.branch_id_fk = branch_id_fk;
         this.school_name = school_name;
@@ -31,19 +31,19 @@ public class AllSchoolModel {
         this.school_google_lat = school_google_lat;
     }
 
-    public String getSchool_google_long() {
+    public Double getSchool_google_long() {
         return school_google_long;
     }
 
-    public void setSchool_google_long(String school_google_long) {
+    public void setSchool_google_long(Double school_google_long) {
         this.school_google_long = school_google_long;
     }
 
-    public String getSchool_google_lat() {
+    public Double getSchool_google_lat() {
         return school_google_lat;
     }
 
-    public void setSchool_google_lat(String school_google_lat) {
+    public void setSchool_google_lat(Double school_google_lat) {
         this.school_google_lat = school_google_lat;
     }
 

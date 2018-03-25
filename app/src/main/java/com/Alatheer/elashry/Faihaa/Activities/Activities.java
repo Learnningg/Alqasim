@@ -72,15 +72,12 @@ public class Activities extends AppCompatActivity {
                     nodata_container.setVisibility(View.VISIBLE);
                     sr.setRefreshing(false);
                 }
-
-
             }
 
             @Override
             public void onFailure(Call<List<AllActivities_Model>> call, Throwable t) {
                 nodata_container.setVisibility(View.GONE);
                 sr.setRefreshing(false);
-
 
             }
         });

@@ -19,6 +19,7 @@ public class ChildrenFeesDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_children_fees_details);
+
         initView();
         getDataFromIntent();
     }

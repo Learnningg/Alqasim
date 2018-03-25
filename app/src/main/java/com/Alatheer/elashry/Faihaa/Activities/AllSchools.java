@@ -111,8 +111,8 @@ public class AllSchools extends AppCompatActivity implements ViewData {
         String phone = allSchoolModelList.get(pos).getPhone();
         String fax = allSchoolModelList.get(pos).getFax();
         String email = allSchoolModelList.get(pos).getEmail();
-        String school_google_long = allSchoolModelList.get(pos).getSchool_google_long();
-        String school_google_lat = allSchoolModelList.get(pos).getSchool_google_lat();
+        Double school_google_long = allSchoolModelList.get(pos).getSchool_google_long();
+        Double school_google_lat = allSchoolModelList.get(pos).getSchool_google_lat();
         String school_name = allSchoolModelList.get(pos).getSchool_name();
         //Intent intent = new Intent(this,Chooser_Activity.class);
         Intent intent = new Intent(this,ActivityVisitorHome.class);

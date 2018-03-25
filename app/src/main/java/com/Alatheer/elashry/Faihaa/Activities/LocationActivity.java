@@ -22,6 +22,11 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
+        Intent intent=getIntent();
+
+        latitude=intent.getDoubleExtra("latitude",1.1);
+        longitude=intent.getDoubleExtra("longitude",1.1);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -30,14 +35,9 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
-
-        Intent intent=getIntent();
-        latitude=  intent.getDoubleExtra("latitude",1.1);
-        longitude= intent.getDoubleExtra("longitude",1.1);
         LatLng school = new LatLng(latitude, longitude);
-        Toast.makeText(this, ""+latitude+longitude, Toast.LENGTH_SHORT).show();
-
         mMap.addMarker(new MarkerOptions().position(school).title("Marker in school"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(school,13));
     }

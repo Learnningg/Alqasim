@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.Alatheer.elashry.Faihaa.R;
@@ -14,8 +15,9 @@ import me.anwarshahriar.calligrapher.Calligrapher;
 public class ActivityVisitorHome extends AppCompatActivity implements View.OnClickListener{
 
     Button news,activitiyschool,fees,about;
-
-    String school_id,user_type,phone,fax,email,school_google_long,school_google_lat, school_name       ;
+    ImageView copy;
+    String school_id,user_type,phone,fax,email, school_name       ;
+    Double school_google_long,school_google_lat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +38,8 @@ public class ActivityVisitorHome extends AppCompatActivity implements View.OnCli
                 phone             =intent.getStringExtra("phone"             );
                 fax               =intent.getStringExtra("fax"               );
                 email             =intent.getStringExtra("email"             );
-                school_google_long=intent.getStringExtra("school_google_long");
-                school_google_lat =intent.getStringExtra("school_google_lat" );
+                school_google_long=intent.getDoubleExtra("school_google_long",1.1);
+                school_google_lat =intent.getDoubleExtra("school_google_lat",1.1 );
                 school_name       =intent.getStringExtra("school_name"       );
             }
         }
@@ -52,11 +54,13 @@ public class ActivityVisitorHome extends AppCompatActivity implements View.OnCli
         activitiyschool=findViewById(R.id.btn_activities);
         fees=findViewById(R.id.btn_school_fees);
         about=findViewById(R.id.btn_school_about);
+        copy=findViewById(R.id.copyRight);
 
         news.setOnClickListener(this);
         activitiyschool.setOnClickListener(this);
         fees.setOnClickListener(this);
         about.setOnClickListener(this);
+        copy.setOnClickListener(this);
     }
 
     @Override
@@ -97,6 +101,11 @@ public class ActivityVisitorHome extends AppCompatActivity implements View.OnCli
 
                 startActivity(intent4);
             break;
+            case R.id.copyRight:
+                Intent intent5=new Intent(ActivityVisitorHome.this,CopyRight.class);
+
+                startActivity(intent5);
+                break;
         }
 
     }

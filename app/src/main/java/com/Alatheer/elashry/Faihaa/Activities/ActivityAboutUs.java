@@ -14,7 +14,8 @@ import me.anwarshahriar.calligrapher.Calligrapher;
 
 public class ActivityAboutUs extends AppCompatActivity implements View.OnClickListener {
 
-    String school_id,user_type,phone,fax,email,school_google_long,school_google_lat, school_name ;
+    String school_id,user_type,phone,fax,email, school_name ;
+    Double school_google_long,school_google_lat;
     Button location;
     TextView tphone,tfax,temail, tschool_name;
 
@@ -38,8 +39,8 @@ public class ActivityAboutUs extends AppCompatActivity implements View.OnClickLi
                 phone             =intent.getStringExtra("phone"             );
                 fax               =intent.getStringExtra("fax"               );
                 email             =intent.getStringExtra("email"             );
-                school_google_long=intent.getStringExtra("school_google_long");
-                school_google_lat =intent.getStringExtra("school_google_lat" );
+                school_google_long=intent.getDoubleExtra("school_google_long",1.1);
+                school_google_lat =intent.getDoubleExtra("school_google_lat" ,1.1);
                 school_name       =intent.getStringExtra("school_name"       );
             }
         }
@@ -73,7 +74,8 @@ public class ActivityAboutUs extends AppCompatActivity implements View.OnClickLi
                 Intent intent=new Intent(ActivityAboutUs.this,LocationActivity.class);
                 intent.putExtra("latitude",school_google_long);
                 intent.putExtra("longitude",school_google_lat);
-                startActivity(intent);        }
+                startActivity(intent);
+        }
 
     }
 }

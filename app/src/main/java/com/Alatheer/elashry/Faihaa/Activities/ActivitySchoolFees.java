@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.Alatheer.elashry.Faihaa.Models.School_Fees_Model;
 import com.Alatheer.elashry.Faihaa.R;
@@ -45,6 +46,8 @@ public class ActivitySchoolFees extends AppCompatActivity {
                     school_name.setText(response.body().get(0).getSchool_name());
                     school_fees.setText(response.body().get(0).getTuition_fees());
                     transport_fees.setText(response.body().get(0).getTransfer_fees_1());
+                }else {
+                    Toast.makeText(ActivitySchoolFees.this, "No Data", Toast.LENGTH_SHORT).show();
                 }
             }
 

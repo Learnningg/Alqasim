@@ -38,6 +38,8 @@
     <string name="school_fees">رسوم المدرسه</string>
     <string name="name_school">اسم المدرسه</string>
     <string name="school_trans">رسوم النقل</string>
+    <string name="copyright">عن الشركه</string>
+    <string name="title_activity_location">العنوان</string>
 
 
 </resources>
