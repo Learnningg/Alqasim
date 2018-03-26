@@ -46,7 +46,6 @@ public class ActivityAboutUs extends AppCompatActivity implements View.OnClickLi
         }
 
     }
-
     private void initView() {
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
