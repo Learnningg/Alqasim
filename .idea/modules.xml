@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Faihaa.iml" filepath="$PROJECT_DIR$/Faihaa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Alqasim.iml" filepath="$PROJECT_DIR$/Alqasim.iml" />
+      <module fileurl="file://E:\Emad\Al_Atheer_Projects\Fihaa\Faihaa.iml" filepath="E:\Emad\Al_Atheer_Projects\Fihaa\Faihaa.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://E:\mdares\.idea\mdares.iml" filepath="E:\mdares\.idea\mdares.iml" />
     </modules>
